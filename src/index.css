@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.head{
+  font-family: 'Merienda One', cursive;
+    font-weight: 60px;
+  background-color: white;
+  padding: 50px;
+  color: #8c2f39;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.homebk{
+  /* background-image: url(./assests/ssu.jpg); */
+  width: auto;
+  height: 600px;
+  background-repeat: no-repeat;
+}
+.hr {
+  width: 400px;
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+
+}
+
+.list
+{
+  margin-left: 600px;
+  font-family: 'Merienda One', cursive;
+  color: #997b66;
+  text-transform: uppercase;
+
+}
+
+.img{
+  background-color: #FFF;
+
+}
+  .img:hover {
+    transform: scale(1.1);
+    opacity:0.8;
+
+  }
+
+  .slider{
+    height: 300px;
+    margin-bottom: 50px;
+  }
+
+
+.container {
+  background-color: rgb(20, 20, 20);
+ margin-top: 50px;
+padding: 60px;
+text-align: center;
+background-color: rgb(20 20 20 / 91%);
+margin-top: 50px;
+padding: 50px;
+box-shadow: -20px 20px 15px  rgba(83, 81, 81, 0.945);
+margin-bottom: 100px;
+
+
+}
+
+.link{
+  color: #8c2f39;
 }
