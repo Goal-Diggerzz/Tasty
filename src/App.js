@@ -1,4 +1,5 @@
 
+
 import React, { Component } from 'react';
 import Home from './components/homePage';
 import Header from './components/header';
@@ -15,6 +16,7 @@ import {
   Route
 } from "react-router-dom";
 
+
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +29,7 @@ export class App extends Component {
       description: '',
     };
   }
+
 
 
   updateRender = (e) => {
@@ -66,6 +69,7 @@ export class App extends Component {
 
 
 
+
   }
 
 
@@ -84,6 +88,7 @@ export class App extends Component {
     // const { isAuthenticated } = this.props.auth0;
 
     return (
+
       <>
         <div>
         </div>
@@ -115,6 +120,7 @@ export class App extends Component {
         />
         <Footer />
       </>
+
     );
   }
 }
