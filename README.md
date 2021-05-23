@@ -21,6 +21,23 @@ The project idea is to create a website that suggests recipes depends on ingredi
 
 5- Blog: as a user I would like to post a blog easily, and to see other people have posted with a clear and nice format.
 
+
+# Wire Frames
+
+## Home Page
+![HomePage](src/assets/HomePage.JPG)
+
+## Profile Page
+![ProfilePage](src/assets/ProfilePage.JPG)
+
+## Recipes Page
+![RecipesPage](src/assets/RecipesPage.JPG)
+
+## Blogs Page
+![BloggsPage](src/assets/BloggsPage.JPG)
+
+
+
 # Back-end Data Base Model
 
 ```
@@ -43,3 +60,4 @@ recipesModel{
 	ingredients:	
 }
 ```
+
