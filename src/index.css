@@ -1,9 +1,15 @@
+*{
+  width: auto;
+}
+
+
 .head{
   font-family: 'Merienda One', cursive;
-    font-weight: 60px;
+      font-weight: 60px;
   background-color: white;
   padding: 50px;
   color: #8c2f39;
+  text-align: center;
 }
 
 .homebk{
@@ -17,14 +23,14 @@
   height: 1px;
   background-color: #ccc;
   border: none;
-
+margin-left: 600px;
 }
 
 .list
 {
   margin-left: 600px;
   font-family: 'Merienda One', cursive;
-  color: #997b66;
+    color: #997b66;
   text-transform: uppercase;
 
 }
@@ -40,21 +46,23 @@
   }
 
   .slider{
-    height: 300px;
-    margin-bottom: 50px;
+    margin-top: 200px;
   }
+ 
 
 
 .container {
-  background-color: rgb(20, 20, 20);
+  background-image: url(https://images-ext-1.discordapp.net/external/DbKRO7meBJp8YhQODVJYM75M38lZXJVEo6eELQ3NCUc/%3Fid%3D20778/https/foodhub.modeltheme.com/wp-content/uploads/2020/02/call-to-action-v2.jpg?width=881&height=503);
  margin-top: 50px;
-padding: 60px;
+padding: 1000px;
 text-align: center;
 background-color: rgb(20 20 20 / 91%);
 margin-top: 50px;
 padding: 50px;
 box-shadow: -20px 20px 15px  rgba(83, 81, 81, 0.945);
 margin-bottom: 100px;
+width: 300px;
+/* height: 400px; */
 
 
 }
@@ -65,7 +73,7 @@ margin-bottom: 100px;
 
 
 .classCont{
-  position: relative;
+  /* position: relative; */
   width: 20rem;
   height: 17rem;
 }
@@ -74,7 +82,8 @@ margin-bottom: 100px;
 
 .overlay {
   /* margin-left: 15px; */
-  position: absolute;
+  /* position: absolute; */
+  clear: both;
   top: 0;
   left: 0px;
   width: 100%;
@@ -91,5 +100,33 @@ text-align: center;
 }
 
 .overlay:hover{
+  opacity: 1;
+}
+
+
+.blogs{
+width: 90%;
+margin-left: 60px;
+text-align: center;
+margin-bottom: 100px;
+margin-top: 100px;
+}
+
+
+
+
+.cardsImage{
+  transition: transform .3s ease,opacity .3s;
+  -webkit-transition: -webkit-transform .3s ease,opacity .3s;
+}
+
+.cardsImage:hover{
+  -webkit-transform: scale3d(1.1,1.1,1);
+    -moz-transform: scale3d(1.1,1.1,1) rotate(.02deg);
+    opacity: .9;
+}
+
+
+.mb-2 text-muted{
   opacity: 1;
 }
