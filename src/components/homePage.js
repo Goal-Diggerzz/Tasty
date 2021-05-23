@@ -1,19 +1,19 @@
 import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Container from 'react-bootstrap/Container';
-// import Carousel from 'react-bootstrap/Carousel';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
-import pasta from '../assests/pastaa.jpg';
-import cor from '../assests/corr.jpg';
 import sushi from '../assests/sushi.jpg';
 import waffle from '../assests/waffle.jpg';
 import parmizan from '../assests/parmizan.jpg';
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import { MDBMask, MDBView } from "mdbreact";
+// import Image from 'react-bootstrap/Image';
+// import Row from 'react-bootstrap/Row';
+// import pasta from '../assests/pastaa.jpg';
+// import cor from '../assests/corr.jpg';
+// import Container from 'react-bootstrap/Container';
+// import Carousel from 'react-bootstrap/Carousel';
+// import Col from 'react-bootstrap/Col';
+// import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+// import { MDBMask, MDBView } from "mdbreact";
 
 
 class Home extends React.Component {
@@ -52,7 +52,7 @@ class Home extends React.Component {
 
 
               <Card style={{ width: '23rem', marginBottom: '100px' }}>
-                <Card.Body onClick={<a href="http://localhost:3000/blogs" > ygguyfuyfuyfyuf</a>} >
+                <Card.Body>
                   <Card.Img className='cardsImage' onClick={this.props.updateRender}
                     style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }}
                     src='https://foodhub.modeltheme.com/wp-content/uploads/2020/01/burger_categ-400x500.jpg'

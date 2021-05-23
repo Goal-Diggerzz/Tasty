@@ -4,11 +4,13 @@ import React, { Component } from 'react';
 import Home from './components/homePage';
 import Header from './components/header';
 import Recipes from './components/recipes';
+import Search from './components/Search';
 import ModalApp from './components/modalApp';
 import Footer from './components/footer';
 import Blogs from './components/blogs';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import Profile from './components/Profile'
 
 import {
   BrowserRouter as Router,
@@ -23,10 +25,11 @@ export class App extends Component {
     this.state = {
       showModal: false,
       showCards: true,
-      recipiesData: '',
+      recipiesData: [],
       imgPath: '',
       title: '',
       description: '',
+      query: '',
     };
   }
 
@@ -43,11 +46,16 @@ export class App extends Component {
   }
 
 
-
+  updateQuery = (e) => {
+    e.preventDefault()
+    this.setState({
+      query: e.target.value
+    })
+  }
 
   getRecipesData = async () => {
-
-    const url = `${process.env.REACT_APP_SERVER}/recipes`;
+console.log(this.state.query);
+    const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`
 
     const expressReq = await axios.get(url);
     console.log(expressReq.data);
@@ -56,11 +64,6 @@ export class App extends Component {
       showModal: true
 
     });
-
-
-
-
-
   }
 
 
@@ -107,7 +110,22 @@ export class App extends Component {
 
             </Route>
 
+            <Route exact path="/profile">
+              <Profile />
 
+            </Route>
+            <Route exact path="/ok">
+              <Recipes
+              foodData={this.state.recipiesData} />
+
+            </Route>
+            <Route exact path="/nice">
+
+            <Search
+          getRecipesData={this.getRecipesData}
+          updateQuery={this.updateQuery}
+        />
+            </Route>
           </switch>
           <ModalApp closeModal={this.closeModal} showModal={this.state.showModal} />
 
