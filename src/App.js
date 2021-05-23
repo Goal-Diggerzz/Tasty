@@ -37,19 +37,17 @@ export class App extends Component {
   };
   render() {
     return (
-<<<<<<< HEAD
+      <>
       <div>
         <h1>Hi</h1>
         <Recipes showModalFunc={this.showModalFunc} />
         <ModalApp closeModal={this.closeModal} showModal={this.state.showModal} />
         <Footer />
       </div>
-=======
-      <>
+     
    <Header/>
         <Home />
 </>
->>>>>>> test
     );
   }
 }
