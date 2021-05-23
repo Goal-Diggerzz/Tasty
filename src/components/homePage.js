@@ -60,11 +60,13 @@ class Home extends React.Component {
           <hr />
 
           <CardColumns style={{ width: '70%', textAlign: 'center', marginLeft: '200px' }}>
-            <Card style={{ width: '23rem' }}>
+
+
+            <Card style={{ width: '23rem', position: 'relative', marginBottom: '100px' }}>
               <Card.Body>
                 <Image style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }} src={sushi} />
                 <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                <Card.Text>
+                <Card.Text className='overlay'>
                   Some quick example text to build on the card title and make up the bulk of
                   the card's content.
                 </Card.Text>
@@ -75,11 +77,12 @@ class Home extends React.Component {
 
 
             <Card style={{ width: '23rem' }}>
-              <Card.Body>
-
-                <Image style={{ height: '17rem', width: '21rem', marginBottom: '2rem' }} src={waffle} />
+              <Card.Body >
+                <div className='imageCont'>
+                  <Image style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }} src={waffle} />
+                </div>
                 <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                <Card.Text>
+                <Card.Text className='overlay' >
                   Some quick example text to build on the card title and make up the bulk of
                   the card's content.
                 </Card.Text>
@@ -87,11 +90,11 @@ class Home extends React.Component {
               </Card.Body>
             </Card>
 
-            <Card style={{ width: '23rem' }}>
+            <Card style={{ width: '23rem', position: 'relative' }}>
               <Card.Body>
                 <Image style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }} src={parmizan} />
                 <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                <Card.Text>
+                <Card.Text className='overlay'>
                   Some quick example text to build on the card title and make up the bulk of
                   the card's content.
                 </Card.Text>
