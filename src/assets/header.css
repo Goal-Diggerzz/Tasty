@@ -1,0 +1,950 @@
+/* .woocommerce-ResetPassword .woocommerce-Button, .woocommerce-message .woocommerce-Button, .woocommerce-Message .woocommerce-Button, .woocommerce-EditAccountForm .woocommerce-Button, .header_mini_cart .button.wc-forward, .header_mini_cart .button.checkout, .foodhub_preloader_holder, #modal-embed-copy:hover, .header-title-breadcrumb-overlay, .woocommerce .product-thumbnails span.onsale, .no-results button, .modeltheme-pagination.pagination .page-numbers.current, .mt-rating-percentage-wrapper .progress-bar-success, a.wp-block-button__link, .list-view .post-details .post-excerpt .more-link, .mt-listing-search-taxonomy .checkboxes-categories .checkbox-inline input:checked ~ .checkmark, .styling-checkboxes .checkbox-inline input:checked ~ .checkmark, #commentform .form-submit button, .ico-whitepapers-posts .post-button a:hover, .sidebar-content .widget_search .search-submit, .um-login input[type=submit].um-button, body .courses-list .featured_image_courses .course_badge i, body .courses-list .shortcode_course_content, .woocommerce nav.woocommerce-pagination ul li span.current, body .woocommerce ul.products li.product .onsale {
+    background-color: #528f2d !important;
+}
+
+.navstyle-v1 nav#modeltheme-main-head {
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+}
+
+.navstyle-v1 nav#modeltheme-main-head {
+    position: relative;
+}
+
+#modeltheme-main-head {
+    z-index: 200;
+    clear: both;
+    border: 0 none;
+    width: 100%;
+}
+
+.form-control, .wpb_button, .owl-theme .owl-controls .owl-buttons div, #modeltheme-main-head, #contact_form .button[type="submit"], #contact-us .form-control, .search-field, .btn-lg, .btn-group-lg>.btn, .btn, pre, .slider_navigation .btn, .widget_popular_recent_tabs .nav-tabs li a, .thumbnail, .widget_toggles .panel-group .panel, .panel, .panel-heading {
+    border-radius: 0;
+    -o-border-radius: 0;
+    -ms-border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+.is_header_semitransparent .navbar-default {
+    background: rgba(21, 21, 21, 0.0) none repeat scroll 0 0;
+}
+
+.is_header_semitransparent .navbar-default {
+    background-color: transparent;
+}
+
+.navbar-default {
+    background-color: transparent;
+}
+
+.navbar-default {
+    border: 0 none;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: 0 none;
+    border-radius: 0;
+}
+
+nav {
+    background: #2f383d;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+
+* {
+    word-wrap: break-word;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav {
+    display: block;
+}
+
+body {
+    font-family: Ubuntu;
+}
+
+body {
+    font-family: "Montserrat",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #242424;
+    background-color: #fff;
+}
+
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:after, .dl-horizontal dd:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical>.btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after {
+    clear: both;
+}
+
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+    content: " ";
+    display: table;
+}
+
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#modeltheme-main-head > div {
+    position: relative;
+}
+.col-md-12 {
+    width: 100%;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+* {
+    word-wrap: break-word;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header.header1 #modeltheme-main-head .row {
+    padding: 10px 0px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.header1 #navbar {
+    text-align: right;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e7;
+}
+
+.navbar-collapse.collapse {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
+
+.navbar-collapse {
+    border-top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.navbar-collapse {
+    overflow-x: visible;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-top: 1px solid transparent;
+    -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+    -webkit-overflow-scrolling: touch;
+}
+
+.collapse {
+    display: none;
+    visibility: hidden;
+}
+.col-md-9 {
+    width: 75%;
+}
+
+div {
+    display: block;
+}
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --woocommerce: $woocommerce;
+    --wc-green: $green;
+    --wc-red: $red;
+    --wc-orange: $orange;
+    --wc-blue: $blue;
+    --wc-primary: $primary;
+    --wc-primary-text: $primarytext;
+    --wc-secondary: $secondary;
+    --wc-secondary-text: $secondarytext;
+    --wc-highlight: $highlight;
+    --wc-highligh-text: $highlightext;
+    --wc-content-bg: $contentbg;
+    --wc-subtext: $subtext;
+}
+
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+::selection {
+    color: #ffffff;
+    background: #528f2d;
+}
+
+.menu.nav-effect.nav-menu {
+    margin: 0;
+    position: relative;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+}
+
+.navbar-nav {
+    margin: 7.5px -15px;
+}
+
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pull-right {
+    float: right;
+}
+
+header nav ul {
+    display: inline-table;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.menu .menu-item {
+    display: inline-block;
+}
+
+.navbar-nav>li {
+    float: left;
+}
+
+.nav>li {
+    position: relative;
+    display: block;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav #navbar ul li.mega1column, nav #navbar ul li.mega2columns, nav #navbar ul li.mega3columns {
+    position: unset;
+}
+
+li#nav-menu-list {
+    margin-left: 35px;
+    margin-right: 5px;
+    float: right;
+}
+
+#navbar .menu-item > a, .navbar-nav .search_products a, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a, #navbar a.mt-search-icon i, #navbar .shop_cart i, #dropdown-user-profile .profile i {
+    color: #FFFFFF;
+}
+
+header .navbar-toggle, .navbar-default .navbar-toggle {
+    border: 3px solid #528f2d;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+
+header .navbar-toggle {
+    border-radius: 0;
+    margin-top: 35px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.tagcloud > a:hover, .modeltheme-icon-search, .wpb_button::after, .rotate45, .latest-posts .post-date-day, .latest-posts h3, .latest-tweets h3, .latest-videos h3, .button.solid-button, button.vc_btn, .pricing-table.recomended .table-content, .pricing-table .table-content:hover, .pricing-table.Recommended .table-content, .pricing-table.recommended .table-content, .pricing-table.recomended .table-content, .pricing-table .table-content:hover, .block-triangle, .owl-theme .owl-controls .owl-page span, body .vc_btn.vc_btn-blue, body a.vc_btn.vc_btn-blue, body button.vc_btn.vc_btn-blue, #subscribe > button[type='submit'], .social-sharer > li:hover, .prev-next-post a:hover .rotate45, .masonry_banner.default-skin, .form-submit input, .member-header::after, .member-footer .social::before, .member-footer .social::after, .subscribe > button[type='submit'], .no-results input[type='submit'], h3#reply-title::after, .newspaper-info, header.header1 .header-nav-actions .shop_cart, .categories_shortcode .owl-controls .owl-buttons i:hover, .widget-title:after, h2.heading-bottom:after, .single .content-car-heading:after, .wpb_content_element .wpb_accordion_wrapper .wpb_accordion_header.ui-state-active, #primary .main-content ul li:not(.rotate45)::before, .wpcf7-form .wpcf7-submit, ul.ecs-event-list li span, #contact_form2 .solid-button.button, .navbar-default .navbar-toggle .icon-bar, .modeltheme-search .search-submit, .pricing-table.recommended .table-content .title-pricing, .pricing-table .table-content:hover .title-pricing, .pricing-table.recommended .button.solid-button, .blogloop-v5 .absolute-date-badge span, .post-category-date a[rel="tag"], .foodhub_preloader_holder, .mt_car--single-gallery.mt_car--featured-single-gallery:hover, footer .mc4wp-form-fields input[type="submit"], .pricing-table .table-content:hover .button.solid-button, footer .footer-top .menu .menu-item a::before, .blogloop-v4.list-view .post-date, header .top-header, .navbar-toggle .icon-bar, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce .woocommerce-cart-form .button, .woocommerce input.button, table.compare-list .add-to-cart td a, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce .woocommerce-form button, .woocommerce input.button.alt, .woocommerce a.remove:hover, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce.single-product .wishlist-container .yith-wcwl-wishlistaddedbrowse, .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt[disabled]:disabled, .woocommerce #respond input#submit.alt[disabled]:disabled:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt[disabled]:disabled, .woocommerce a.button.alt[disabled]:disabled:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt[disabled]:disabled, .woocommerce button.button.alt[disabled]:disabled:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt[disabled]:disabled, .woocommerce input.button.alt[disabled]:disabled:hover, .hover-components .component a:hover, table.compare-list .add-to-cart td a, .panel-single-icondrops, .single-mt_listing .single-icondrops, #listings_metaboxs input[type="submit"], .mt_listing--single-price-inner, input.wpcf7-form-control.wpcf7-submit, .mt-single-event-head, .mt_listing .single-icondrops-content .progress, .post-password-form input[type="submit"], .widget.widget_product_search button, .search-form input[type="submit"], .slider_navigation .btn, .single-mt_listing .mt_listing_website_button:hover, .single-mt_listing .mt_listing_website_button:hover, .single-mt_listing .mt_listing_whitepaper_button:hover, .single-mt_listing .mt_listing_purchase_button:hover, .single-mt_listing .mt_listing_video_button:hover, #listings_metaboxs .cmb-type-title, body .btn-sticky-left, .owl-theme .owl-controls .owl-buttons div, .error404 a.vc_button_404, .comment-edit-link, .comment-reply-link, .modal-header, .listing-status a.btn-edit, a.button-view-more-listings, p.woocommerce-mini-cart__buttons a.button, .pagination a.page-numbers:before, .pagination span.page-numbers:before, .single_list_share_this, .owl-theme .owl-controls .owl-buttons div, .pagination .page-numbers.current, .woocommerce .woocommerce-MyAccount-navigation li.is-active, .ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before, .woocommerce .woocommerce-MyAccount-navigation li:hover, .foodhub-contact button.wpcf7-form-control.wpcf7-submit, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a, .single-tribe_events div#overlay, .member01_social a:hover, .listing-details-author-info li a:hover, .repeat-section .repeat-add, .modeltheme-modal #loginform input[type="submit"], form#login .register_button, form#login .submit_button, .btn-register, .shortcode-archive-list ul.listings-list li, .select2-container--default .select2-results__option--highlighted[aria-selected], .print-recipe-btn, .woocommerce-account #modeltheme-main-head, .embed-modal-content .modal-footer button, form#add-new-review button.button-listing, .repeat-section .repeat-remove, .mt_listing--single-gallery .flex-zone-inside, .checkout_coupon.woocommerce-form-coupon .button, #signup-modal-content .woocommerce-form-register.register .button[type='submit'], .post-password-form input[type='submit'] {
+    background: #528f2d;}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+
+.navbar-header .logo {
+    margin: 18px 0;
+}
+
+h1, h1 span {
+    font-family: "Signika";
+    font-size: 36px;
+    font-weight: 700;
+    color: #242424;
+}
+
+h1, .h1 {
+    font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+.navbar-header .logo > a:hover, .navbar-header .logo > a {
+    color: #000;
+}
+
+.logo a {
+    font-weight: 900;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.logo img, .navbar-header .logo img {
+    max-width: 220px;
+}
+
+.logo img, .navbar-header .logo img {
+    transition: all 0.3s ease 0s;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+img {
+    border: 0;
+}
+
+.foodhub_preloader_holder {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10003;
+}
+
+body {
+    background: #ffffff;
+}
+
+body {
+    font-family: Ubuntu;
+}
+
+.modeltheme-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.80);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.is_header_semitransparent #page > header.header1 {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+    
+}
+header {
+    background-color: #000;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+
+#navbar .menu-item > a {
+    display: block;
+    font-weight: bold;
+    line-height: 34px;
+    padding: 19px 20px;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out 0s;
+    color: #fff;
+}
+
+#navbar .menu-item > a {
+    position: relative;
+}
+
+.navbar-nav .search_products a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a {
+    font-family: "Ubuntu";
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #777;
+}
+
+.navbar-nav > li > a {
+    font-size: 17px;
+    padding: 25px 10px;
+    display: block;
+    line-height: 20px;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+a {
+    color: #528f2d;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+#navbar .sub-menu, .navbar ul li ul.sub-menu {
+    background-color: #FFFFFF;
+}
+
+#navbar .sub-menu {
+    box-shadow: 0 10px 10px rgb(37 37 37 / 12%);
+    -webkit-box-shadow: 0 10px 10px rgb(37 37 37 / 12%);
+    text-align: left;
+    opacity: 0;
+    position: absolute;
+    width: 220px;
+    top: 150%;
+    transition: all 250ms ease-in-out;
+    -webkit-transition: all 250ms ease-in-out;
+    visibility: hidden;
+    padding: 17px;
+    border-radius: 5px;
+}
+
+#navbar .sub-menu, .navbar ul li ul.sub-menu {
+    background: none repeat scroll 0 0 #f5f5f5;
+    border-top: 0 none;
+    left: 17px;
+    opacity: 0;
+    padding-top: 0;
+    position: absolute;
+    text-align: left;
+    top: 180%;
+    transition: all 400ms ease 0s;
+    -webkit-transition: all 400ms ease 0s;
+    visibility: hidden;
+    width: 250px;
+    z-index: 9999;
+}
+
+.single.single-post .article-header .article-details .wp-post-image, .share-social-links li a, .post_thumbnails_slider img, .post-thumbnail a, .ico-whitepapers-posts .post-button a, .pagination .page-numbers, .testimonial02_text, .list-view .post-details .post-excerpt .more-link, #commentform .form-submit button, .wpcf7-form .ico-contact input, .newsletter input[type="email"], .newsletter input[type="submit"], .mt_listing--single-gallery .flex-zone-inside, .mt_listing--youtube_video img, .mt_listing--single-gallery .ico-screenshot, #navbar .sub-menu, .navbar ul li ul.sub-menu, .mtlistings-ico-style-v2 .blog_custom_listings img, .single-icondrops-content .social-links li a, .thumbs-rating-container .thumbs-rating-down i, .thumbs-rating-container .thumbs-rating-up i, .mt_listing_end_date_pick, .mt_listing_start_date_pick, .single-mt_listing .mt_listing_website_button, .single-mt_listing .mt_listing_whitepaper_button, .single-mt_listing .mt_listing_purchase_button, .single-mt_listing .mt_listing_video_button, .modeltheme-countdown .days-digit, .modeltheme-countdown .hours-digit, .modeltheme-countdown .minutes-digit, .modeltheme-countdown .seconds-digit, .widget_foodhub_recent_listings_with_thumbnail a, footer .social-links a, header.header1 .nav-menu-account a, .widget_foodhub_recent_entries_with_thumbnail .post-date, .widget_foodhub_recent_listings_with_thumbnail .post-details .post-date, .sidebar-content .widget_search label input, .sidebar-content .widget_search .search-submit, .back-to-top.modeltheme-is-visible, .mtsearchform-style-v2 .mt-listings-popular-searches li, .mt_ico_video_resources .ico-icon .blog_post_image, .ico-whitepapers-posts .single-post img, #listings_metaboxs select, #listings_metaboxs input[type="text"], #listings_metaboxs input[type="submit"], .mtlistings-ico-style-v2 .foodhub-metas > div, .progress.skill-bar, .mt-events-style-v2 .article-details img, .mt_ico_video_resources .mt_ico_video_resources_category, .mtlistings-events-style-v2 .mt-single-event .timeline_image_holder a img, .um input[type="submit"].um-button, .um.um-login .um-button.um-alt, .no-results input, .comment-form input, .comment-form textarea, .modeltheme-modal #login-modal-content, .modeltheme-modal #loginform input[type="text"], .modeltheme-modal #loginform input[type="password"], .modeltheme-modal .um .um-form input[type="text"], .modeltheme-modal .um .um-form input[type="tel"], .modeltheme-modal .um .um-form input[type="password"], .modeltheme-modal .um .um-form textarea, .modeltheme-modal #loginform input[type="submit"], form#login .register_button, form#login .submit_button, .btn-register, .mt_ico_video_resources .list-view .blog_custom, .blogloop-v4.list-view .post-date {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+#navbar .sub-menu * {
+    visibility: hidden;
+}
+
+#navbar li li {
+    display: list-item;
+    list-style: none;
+}
+
+.menu .menu-item {
+    display: inline-block;
+}
+
+#navbar .sub-menu .menu-item > a {
+    line-height: normal;
+    padding: 10px;
+    text-transform: none;
+}
+
+#navbar ul.sub-menu li a {
+    color: #151515;
+}
+
+#navbar ul.sub-menu li a {
+    color: #606060;
+    display: block;
+    font-size: 14px;
+    padding: 3px 13px;
+}
+
+#navbar .mega3columns .cf-mega-menu.sub-menu {
+    left: 15px;
+    width: 750px;
+    z-index: 99999999;
+    padding: 5px;
+}
+
+#navbar .cf-mega-menu.sub-menu {
+    width: 800px;
+}
+
+.vc_row:after, .vc_row:before {
+    content: " ";
+    display: table;
+}
+
+.vc_column_container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.vc_col-sm-3 {
+    width: 25%;
+}
+
+.vc_col-sm-1, .vc_col-sm-10, .vc_col-sm-11, .vc_col-sm-12, .vc_col-sm-2, .vc_col-sm-3, .vc_col-sm-4, .vc_col-sm-5, .vc_col-sm-6, .vc_col-sm-7, .vc_col-sm-8, .vc_col-sm-9 {
+    float: left;
+}
+
+body .no-margin {
+    margin-bottom: 0;
+}
+.vc_row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.wpb_row {
+    margin-bottom: 80px;
+}
+
+.vc_row {
+    background-size: cover;
+}
+
+.vc_col-lg-1, .vc_col-lg-10, .vc_col-lg-11, .vc_col-lg-12, .vc_col-lg-2, .vc_col-lg-3, .vc_col-lg-4, .vc_col-lg-5, .vc_col-lg-6, .vc_col-lg-7, .vc_col-lg-8, .vc_col-lg-9, .vc_col-md-1, .vc_col-md-10, .vc_col-md-11, .vc_col-md-12, .vc_col-md-2, .vc_col-md-3, .vc_col-md-4, .vc_col-md-5, .vc_col-md-6, .vc_col-md-7, .vc_col-md-8, .vc_col-md-9, .vc_col-sm-1, .vc_col-sm-10, .vc_col-sm-11, .vc_col-sm-12, .vc_col-sm-2, .vc_col-sm-3, .vc_col-sm-4, .vc_col-sm-5, .vc_col-sm-6, .vc_col-sm-7, .vc_col-sm-8, .vc_col-sm-9, .vc_col-xs-1, .vc_col-xs-10, .vc_col-xs-11, .vc_col-xs-12, .vc_col-xs-2, .vc_col-xs-3, .vc_col-xs-4, .vc_col-xs-5, .vc_col-xs-6, .vc_col-xs-7, .vc_col-xs-8, .vc_col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.vc_column_container {
+    width: 100%;
+}
+
+.wpb_column {
+    height: auto;
+}
+
+.wpb_button, .wpb_content_element, ul.wpb_thumbnails-fluid>li {
+    margin-bottom: 35px;
+}
+
+.wpb_content_element {
+    margin: 0 auto!important;
+}
+
+#content .wpb_alert p:last-child, #content .wpb_text_column :last-child, #content .wpb_text_column p:last-child, .wpb_alert p:last-child, .wpb_text_column :last-child, .wpb_text_column p:last-child {
+    margin-bottom: 0;
+}
+
+.single article .article-content p, p, dd, .post-excerpt {
+    font-size: 15px;
+    line-height: 25px;
+    font-family: Ubuntu;
+    color: #686868;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.single article .article-content p, p, .post-excerpt {
+    line-height: 25px;
+    color: #686868;
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.24s ease-in-out;
+    -moz-transition: opacity 0.24s ease-in-out;
+    transition: opacity 0.24s ease-in-out;
+}
+
+
+element.style {
+    color: #151515;
+    padding-top: 15px;
+    padding-left: 10px;
+    display: block;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+#navbar .mt-icon-list-item {
+    padding-top: 4px;
+    padding-left: 10px;
+}
+
+.top-header {
+    display: none;
+}
+
+.post-excerpt, .breadcrumb, .single-post-social > div, .tweet-body, .article-details .post-author, .tweet-date, .top-header, .author-biography {
+    font-weight: 400;
+}
+
+.navbar-default {
+    background-color: #151515;
+}
+
+.navbar-header {
+    float: left;
+}
+
+.col-md-3 {
+    width: 25%;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+
+.navbar-collapse.in {
+    overflow-y: auto;
+}
+
+.collapse.in {
+    display: block;
+    visibility: visible;
+}
+
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.navbar-default .navbar-nav > li > a:hover::before, .navbar-default .navbar-nav > li:hover > a::before, .navbar-default .navbar-nav > li.current-menu-item > a::before {
+    text-shadow: 10px 0 #fff, -10px 0 #fff;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a::before {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    content: "•";
+    color: transparent;
+    text-shadow: transparent 0px 0px;
+    font-size: 1.3em;
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition: all 250ms ease-in-out 0s;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+li#search-header {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-collapse.collapse {
+    display: block !important;
+    /* visibility: visible !important; */
+    /* height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
+
+.full-screen-preview__frame {
+    width: 100%;
+    background-color: white;
+} */ 
+
+*{
+    margin:0;
+    padding:0;
+    font-family:verdana;
+  }
+  #abc{
+    width:100%;
+    height:708px;
+    background-image: url(https://foodhub.modeltheme.com/wp-content/uploads/2020/02/foodhub-slider-main-food-v4.jpg?id=20741);
+    background-size: cover;
+    margin-bottom: 0px !important;
+    padding-bottom: 95px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  }
+
+  #logo {
+      float: left;
+  }
+  #logo img {
+    vertical-align: middle;
+    border-style: none;
+    height: 250px;
+
+    margin: -60px;
+  }
+  nav{
+    width: 100%;
+    height: 50px;
+
+    line-height: 50px;
+  }
+  nav ul{
+    float: right;
+    margin-right: 30px;
+  }
+  nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    transition: 0.7s all;
+  }
+  nav ul li:hover{
+    background-color:#ffffff;
+  }
+  nav ul li a{
+    display: block;
+    font-weight: bold;
+    line-height: 34px;
+    padding: 19px 20px;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out 0s;
+    color: #fff;
+    
+  }
+  li a:hover {
+      color: black;
+      text-decoration: none;
+  }
