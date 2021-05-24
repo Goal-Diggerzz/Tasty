@@ -22,8 +22,12 @@ export class Header extends Component {
               <li><a href="#">Home</a></li>
               <li><a href="http://localhost:3000/recipes">My Recipies</a></li>
               <li><a href="http://localhost:3000/blogs">Blog</a></li>
+<<<<<<< HEAD
               <li><a href="http://localhost:3000/profile">profile</a></li>
               <li><a href="#">Contact Us</a></li>
+=======
+              <li><a href="http://localhost:3000/AboutUs">About Us</a></li>
+>>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
               <li >
                   <LoginButton />
 
