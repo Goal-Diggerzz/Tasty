@@ -68,7 +68,7 @@ addBlog = async (e) => {
   };
 
   render() {
-
+const {user}=this.props.auth0
     return (
       <>
       <Button variant="primary" onClick={this.handleShow}>
@@ -156,6 +156,7 @@ addBlog = async (e) => {
     {
                 this.state.blogData.map(data=>
                     <Blog 
+                    email={user.email}
                     img={this.state.blogData.title}
                     title={this.state.blogData.title}
                     description={this.state.blogData.description} />

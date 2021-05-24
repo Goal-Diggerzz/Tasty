@@ -62,37 +62,6 @@ export class Profile extends Component {
     );
   }
 }
-<<<<<<< HEAD
-=======
-}
-
-
-    componentDidMount = () => {
-        this.addRecipe();
-    }
-    addRecipe = () => {
-
-    }
-    render() {
-        return (
-            <div>
-                
-                    <Form>
-                        <Form.Group controlId="formBasicText">
-                            <Form.Label>My Recipes</Form.Label>
-                        </Form.Group>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>label</Form.Label>
-                            <Form.Control  type="text" placeholder="" />      
-                         </Form.Group>
-                            </Form>      
-            </div>
-        )
-    }
-}
-
-export default Profile
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
 
 export default withAuth0(Profile);
 

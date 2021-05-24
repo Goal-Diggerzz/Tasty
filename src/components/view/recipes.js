@@ -7,6 +7,7 @@ export class Recipes extends Component {
 
   render() {
     recipesData = this.props.foodData;
+    console.log(this.props.foodData);
     return (
       recipesData.map(data => {
         return (

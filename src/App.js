@@ -19,6 +19,7 @@ import {
   Route,
   BrowserRouter
 } from "react-router-dom";
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 
 export class App extends Component {
@@ -91,7 +92,7 @@ console.log(this.state.query);
   };
 
   addFavPost = async () => {
-    // console.log(this.state.selectedFavData)
+    console.log(this.state.selectedFavData)
     const { user } = this.props.auth0;
     const favDataBody = {
       email: user.email,
@@ -109,7 +110,7 @@ console.log(this.state.query);
     });
   };
   addFav = async (data) => {
-    // console.log(data)
+    console.log(data)
     await this.setState({
       selectedFavData: data,
     });
@@ -136,6 +137,7 @@ console.log(isAuthenticated);
 </Route>
             <Route exact path="/recipes">
               <Recipes foodData={this.state.recipiesData}
+              addFav={this.addFav}
               /> 
                  <Search
           getRecipesData={this.getRecipesData}
@@ -152,10 +154,10 @@ console.log(isAuthenticated);
               <Profile  favouriteData={this.state.favouriteData}/>
 
             </Route>
-            {/* <Route exact path="/aboutus">
+            <Route exact path="/aboutus">
               <AboutUs/>
 
-            </Route> */}
+            </Route>
           
 
            
