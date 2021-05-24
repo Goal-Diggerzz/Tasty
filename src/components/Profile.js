@@ -1,57 +1,69 @@
-import React, { Component } from 'react'
-import { Form,  Button } from 'react-bootstrap'
+import React, { Component } from "react";
+import { Form, Button, Container, Row, Col, Carousel } from "react-bootstrap";
+import { withAuth0 } from "@auth0/auth0-react";
 
 export class Profile extends Component {
-constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-        label: String,
-        img: String,
-        calories: Number,
-        ingredients: [],
+    this.state = {
+      label: String,
+      img: String,
+      calories: Number,
+      ingredients: [],
+    };
+  }
+
+  componentDidMount = () => {
+    this.addRecipe();
+  };
+  addRecipe = () => {};
+  render() {
+      let testNames= this.props.favouriteData;
+    const { user, isAuthenticated } = this.props.auth0;
+    console.log(testNames);
+    return (
+      <div>
+        {isAuthenticated && (
+          <>
+            <img src={user.picture} />
+            <h2>{user.name}</h2>
+
+            <Container>
+              <Row>
+                <Col>
+                  <h3>Favorite Recipes</h3>
+                  <Carousel fade>
+                  {testNames.map((data)=>
+                    <Carousel.Item>
+                      <img
+                        className="d-block w-100"
+                        src={data.img}
+                        alt="First slide"
+                      />
+                      <Carousel.Caption>
+                        <h3>{data.name}</h3>
+                        <p>
+                          Nulla vitae elit libero, a pharetra augue mollis
+                          interdum.
+                        </p>
+                      </Carousel.Caption>
+                    </Carousel.Item>
+                    )}
+                  </Carousel>
+                </Col>
+                <Col>
+                  <h3>My Blogs</h3>
+                </Col>
+              </Row>
+            </Container>
+          </>
+        )}
+      </div>
+    );
+  }
 }
-}
 
-
-    componentDidMount = () => {
-        this.addRecipe();
-    }
-    addRecipe = () => {
-
-    }
-    render() {
-        return (
-            <div>
-                
-                    <Form>
-                        <Form.Group controlId="formBasicText">
-                            <Form.Label>My Recipes</Form.Label>
-                        </Form.Group>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control  type="text" placeholder="Enter book name" />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicText">
-                            <Form.Label>Description</Form.Label>
-                            <Form.Control  type="text" placeholder="Enter book description" />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicText">
-                            <Form.Label>Status</Form.Label>
-                            <Form.Control type="text" placeholder="Enter read status" />
-                        </Form.Group>
-                    </Form>
-                    {/* <Button variant="secondary" onClick={this.props.handleClose} >Close</Button> */}
-                    <Button variant="primary" >Add Book</Button>
-            
-            </div>
-        )
-    }
-}
-
-export default Profile
-
+export default withAuth0(Profile);
 
 // class YourClass extends React.Component{
 //     constructor(props){

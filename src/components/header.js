@@ -22,11 +22,11 @@ export class Header extends Component {
               <li><a href="#">Home</a></li>
               <li><a href="http://localhost:3000/recipes">My Recipies</a></li>
               <li><a href="http://localhost:3000/blogs">Blog</a></li>
+              <li><a href="http://localhost:3000/profile">profile</a></li>
               <li><a href="#">Contact Us</a></li>
               <li >
-                <a href='#'>
                   <LoginButton />
-                </a>
+
               </li>
             </ul>
           </nav>

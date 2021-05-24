@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import {  Card, CardDeck } from "react-bootstrap";
+import {  Card, CardDeck, Button } from "react-bootstrap";
 // import CardDeck from "react-bootstrap/CardDeck";
 import axios from 'axios'
 
 export class Recipes extends Component {
 
   render() {
-    // let recipesData = this.props.recipesData;
 
     return (
       this.props.foodData.map(data => {
@@ -16,8 +15,7 @@ export class Recipes extends Component {
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>{data.label}</Card.Title>
-                  <Card.Img>
-                    {data.img}
+                  <Card.Img src={data.img}>
                   </Card.Img>
                   <Card.Text>
                     {data.ingridients}
@@ -26,6 +24,7 @@ export class Recipes extends Component {
                 <Card.Footer>
                   {data.calories}
                 </Card.Footer>
+                <Button variant="primary" onClick={()=>this.props.addFav(data)}>❤️</Button>
               </Card>
             </CardDeck>
           </div>
