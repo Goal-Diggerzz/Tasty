@@ -50,7 +50,7 @@ export class App extends Component {
     console.log('this is showCards', this.state.showCards);
   }
 
-  componentDidMount=()=>{
+  componentDidMount = () => {
     this.getRecipesData();
   }
 
@@ -62,7 +62,8 @@ export class App extends Component {
   }
 
   getRecipesData = async () => {
-console.log(this.state.query);
+    // e.preventDefault();
+    console.log(this.state.query);
     const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`
 
     const expressReq = await axios.get(url);
@@ -117,55 +118,55 @@ console.log(this.state.query);
     this.addFavPost();
   };
   render() {
-const {isAuthenticated}= this.props.auth0;
+    const { isAuthenticated } = this.props.auth0;
     // const { isAuthenticated } = this.props.auth0;
-console.log(isAuthenticated);
+    console.log(isAuthenticated);
     return (
 
       <>
-      
+
         <BrowserRouter>
-        <Router>
-        <Header />
-          <Switch>
-<Route exact path="/">
-<Home
-          updateRender={this.updateRender}
-          showCards={this.state.showCards}
+          <Router>
+            <Header />
+            <Switch>
+              <Route exact path="/">
+                <Home
+                  updateRender={this.updateRender}
+                  showCards={this.state.showCards}
 
-        />
-</Route>
-            <Route exact path="/recipes">
-              <Recipes foodData={this.state.recipiesData}
-              addFav={this.addFav}
-              /> 
-                 <Search
-          getRecipesData={this.getRecipesData}
-          updateQuery={this.updateQuery}
-           />
-            </Route>
+                />
+              </Route>
+              <Route exact path="/recipes">
+                <Search
+                  getRecipesData={this.getRecipesData}
+                  updateQuery={this.updateQuery}
+                />
+                <Recipes foodData={this.state.recipiesData}
+                  addFav={this.addFav}
+                />
+              </Route>
 
-            <Route exact path="/blogs">
-              <Blogs />
+              <Route exact path="/blogs">
+                <Blogs />
 
-            </Route>
+              </Route>
 
-            <Route exact path="/profile">
-              <Profile  favouriteData={this.state.favouriteData}/>
+              <Route exact path="/profile">
+                <Profile favouriteData={this.state.favouriteData} />
 
-            </Route>
-            <Route exact path="/aboutus">
-              <AboutUs/>
+              </Route>
+              <Route exact path="/aboutus">
+                <AboutUs />
 
-            </Route>
-          
+              </Route>
 
-           
-          </Switch>
-          <Footer />
-        </Router>
+
+
+            </Switch>
+            <Footer />
+          </Router>
         </BrowserRouter>
-        
+
       </>
 
     );

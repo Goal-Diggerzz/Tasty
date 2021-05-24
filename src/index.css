@@ -265,3 +265,158 @@ margin-top: 100px;
  
 
 }
+
+#formBasicText{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --woocommerce: $woocommerce;
+  --wc-green: $green;
+  --wc-red: $red;
+  --wc-orange: $orange;
+  --wc-blue: $blue;
+  --wc-primary: $primary;
+  --wc-primary-text: $primarytext;
+  --wc-secondary: $secondary;
+  --wc-secondary-text: $secondarytext;
+  --wc-highlight: $highlight;
+  --wc-highligh-text: $highlightext;
+  --wc-content-bg: $contentbg;
+  --wc-subtext: $subtext;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #242424;
+  font-family: Ubuntu;
+  visibility: visible;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  padding: 0;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border: 2px solid rgb(20, 63, 83);
+  visibility: visible;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Merienda One', cursive;
+
+  /* margin-left: 600px; */
+  position: absolute;
+  top:400px;
+
+  left:282px;
+
+
+}
+.s{
+  
+  position: absolute;
+  top:401px;
+background-color: none;
+  left:583px;
+  color:black;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 18px;
+  margin-left: -2px;
+
+
+  
+}
+
+.find{
+  font-size: 2rem;
+  padding: 30px;
+  position: absolute;
+  top: 176px;
+  left:100px;
+  color: rgba(255, 255, 255, 0.842);
+
+
+
+
+
+}
+.stat{
+  font-family: 'Merienda One', cursive;
+  color: white;
+
+  font-size: 1.5rem;
+  position: absolute;
+  top:300px;
+  left:  139px;
+
+  
+}
+
+/* #root > form > div > div > div{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --woocommerce: $woocommerce;
+  --wc-green: $green;
+  --wc-red: $red;
+  --wc-orange: $orange;
+  --wc-blue: $blue;
+  --wc-primary: $primary;
+  --wc-primary-text: $primarytext;
+  --wc-secondary: $secondary;
+  --wc-secondary-text: $secondarytext;
+  --wc-highlight: $highlight;
+  --wc-highligh-text: $highlightext;
+  --wc-content-bg: $contentbg;
+  --wc-subtext: $subtext;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #242424;
+  font-family: Ubuntu;
+  visibility: visible;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+#root > form > div > div{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --woocommerce: $woocommerce;
+  --wc-green: $green;
+  --wc-red: $red;
+  --wc-orange: $orange;
+  --wc-blue: $blue;
+  --wc-primary: $primary;
+  --wc-primary-text: $primarytext;
+  --wc-secondary: $secondary;
+  --wc-secondary-text: $secondarytext;
+  --wc-highlight: $highlight;
+  --wc-highligh-text: $highlightext;
+  --wc-content-bg: $contentbg;
+  --wc-subtext: $subtext;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #242424;
+  font-family: Ubuntu;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  visibility: visible;
+} */
+
+#root > form > div > div > div{
+  text-align: center;
+  display: block;
+
+}
+
+.s{
+
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '/home/moe/codefellows/Tasty/src/assets/header.css';
-import logo from '/home/moe/codefellows/Tasty/src/assets/logo_transparent.png';
+import '../../assets/header.css';
+import logo from '../../assets/logo_transparent.png';
 import LoginButton from '../login';
 // import { Link} from "react-router";
 
@@ -25,7 +25,7 @@ export class Header extends Component {
               <li><a href="http://localhost:3000/profile">profile</a></li>
               <li><a href="http://localhost:3000/AboutUs">About Us</a></li>
               <li >
-                  <LoginButton />
+                <LoginButton />
 
               </li>
             </ul>
