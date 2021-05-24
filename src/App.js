@@ -1,37 +1,26 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import Home from "./components/homePage";
-import Header from "./components/header";
-import Recipes from "./components/recipes";
-import Search from "./components/Search";
-import ModalApp from "./components/modalApp";
-import Footer from "./components/footer";
-import Blogs from "./components/blogs";
-import axios from "axios";
-import { withAuth0 } from "@auth0/auth0-react";
-import Profile from "./components/Profile";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-=======
 import React, { Component } from 'react';
-import Home from './components/homePage';
-import Header from './components/header';
-import Recipes from './components/recipes';
+import Home from './components/view/homePage';
+import Header from './components/utilites/header';
+import Recipes from './components/view/recipes';
 import Search from './components/Search';
 import ModalApp from './components/modalApp';
-import Footer from './components/footer';
-import Blogs from './components/blogs';
+import Footer from './components/utilites/footer';
+import Blogs from './components/view/blogs';
 import AboutUs from './components/AboutUs';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-import Profile from './components/Profile'
+import Profile from './components/view/Profile'
+import IsLoadingAndError from './components/utilites/loading'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  BrowserRouter
 } from "react-router-dom";
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
+
+
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -40,66 +29,56 @@ export class App extends Component {
       showCards: true,
       recipiesData: [],
       favouriteData: [],
+      imgPath: '',
+      title: '',
+      description: '',
+      query: '',
     };
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
+
+
+
   updateRender = (e) => {
+
     e.preventDefault();
     this.setState({
       showCards: false,
-    });
-<<<<<<< HEAD
-    console.log("this is showCards", this.state.showCards);
-  };
 
-=======
+    });
     console.log('this is showCards', this.state.showCards);
   }
-  componentDidMount = () => {
+
+  componentDidMount=()=>{
     this.getRecipesData();
   }
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
+
   updateQuery = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     this.setState({
-<<<<<<< HEAD
-      query: e.target.value,
-    });
-  };
-
-  getRecipesData = async () => {
-    console.log(this.state.query);
-    const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`;
-
-=======
       query: e.target.value
     })
   }
+
   getRecipesData = async () => {
-    console.log(this.state.query);
+console.log(this.state.query);
     const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
+
     const expressReq = await axios.get(url);
     console.log(expressReq.data);
     this.setState({
       recipiesData: expressReq.data,
-<<<<<<< HEAD
-      showModal: true,
-    });
-  };
-
-  clickRecipeFun = (e) => {};
-
-=======
       showModal: true
+
     });
   }
+
+
   clickRecipeFun = (e) => {
+
   }
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
+
+
   showModalFunc = () => {
     this.setState({
       showModal: true,
@@ -110,7 +89,7 @@ export class App extends Component {
       showModal: false,
     });
   };
-<<<<<<< HEAD
+
   addFavPost = async () => {
     // console.log(this.state.selectedFavData)
     const { user } = this.props.auth0;
@@ -125,7 +104,6 @@ export class App extends Component {
     const favData = await axios.post(url, favDataBody);
     console.log(favData)
     console.log(favDataBody)
-
     this.setState({
       favData: favData.data.myRecipes,
     });
@@ -137,65 +115,59 @@ export class App extends Component {
     });
     this.addFavPost();
   };
-=======
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
   render() {
+const {isAuthenticated}= this.props.auth0;
     // const { isAuthenticated } = this.props.auth0;
+console.log(isAuthenticated);
     return (
+
       <>
+      
+        <BrowserRouter>
         <Router>
-          <Header />
+        <Header />
           <Switch>
-            <Route exact path="/">
-              <Home
-                updateRender={this.updateRender}
-                showCards={this.state.showCards}
-              />
-            </Route>
+<Route exact path="/">
+<Home
+          updateRender={this.updateRender}
+          showCards={this.state.showCards}
+
+        />
+</Route>
             <Route exact path="/recipes">
-<<<<<<< HEAD
-              <Recipes
-                foodData={this.state.recipiesData}
-                addFav={this.addFav}
-=======
               <Recipes foodData={this.state.recipiesData}
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
-              />
-              <Search
-                getRecipesData={this.getRecipesData}
-                updateQuery={this.updateQuery}
-              />
+              /> 
+                 <Search
+          getRecipesData={this.getRecipesData}
+          updateQuery={this.updateQuery}
+           />
             </Route>
+
             <Route exact path="/blogs">
               <Blogs />
+
             </Route>
+
             <Route exact path="/profile">
-<<<<<<< HEAD
-              <Profile favouriteData={this.state.favouriteData} />
+              <Profile  favouriteData={this.state.favouriteData}/>
+
             </Route>
             {/* <Route exact path="/aboutus">
               <AboutUs/>
+
             </Route> */}
+          
+
+           
           </Switch>
-          {/* <ModalApp closeModal={this.closeModal} showModal={this.state.showModal} /> */}
-=======
-              <Profile />
-            </Route>
-            <Route exact path="/aboutus">
-              <AboutUs/>
-            </Route>
-          </Switch>
-          <ModalApp closeModal={this.closeModal} showModal={this.state.showModal} />
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
+          <Footer />
         </Router>
-        <Footer />
+        </BrowserRouter>
+        
       </>
+
     );
   }
 }
-<<<<<<< HEAD
 
 export default withAuth0(App);
-=======
-export default App;
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40

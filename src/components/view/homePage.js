@@ -2,9 +2,11 @@ import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
-import sushi from '../assests/sushi.jpg';
-import waffle from '../assests/waffle.jpg';
-import parmizan from '../assests/parmizan.jpg';
+import sushi from '/home/moe/codefellows/Tasty/src/assests/sushi.jpg';
+import waffle from '/home/moe/codefellows/Tasty/src/assests/waffle.jpg';
+import parmizan from '/home/moe/codefellows/Tasty/src/assests/parmizan.jpg';
+import { withAuth0 } from '@auth0/auth0-react';
+
 // import Image from 'react-bootstrap/Image';
 // import Row from 'react-bootstrap/Row';
 // import pasta from '../assests/pastaa.jpg';
@@ -26,11 +28,12 @@ class Home extends React.Component {
 
 
   render() {
-
+    const { user, isAuthenticated } = this.props.auth0;
     return (
 
 
-
+<>
+{isAuthenticated &&
       <div>
         { (this.props.showCards) ?
 
@@ -210,11 +213,11 @@ class Home extends React.Component {
           </CardColumns>
         </div>
 
-      </div>
-
+      </div>}
+</>
 
     );
   }
 }
 
-export default Home;
+export default withAuth0(Home);

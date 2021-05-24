@@ -6,11 +6,7 @@ let recipesData = [];
 export class Recipes extends Component {
 
   render() {
-<<<<<<< HEAD
-
-=======
     recipesData = this.props.foodData;
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
     return (
       recipesData.map(data => {
         return (
@@ -19,13 +15,8 @@ export class Recipes extends Component {
               <Card style={{ width: "30%" }}>
                 <Card.Body>
                   <Card.Title>{data.label}</Card.Title>
-<<<<<<< HEAD
-                  <Card.Img src={data.img}>
-                  </Card.Img>
-=======
                   <Card.Img src={data.img}/>
                     {/* {data.img} */}
->>>>>>> e353c12dab30dbf354ef9bb8f693841a8224bc40
                   <Card.Text>
                     <p>Ingredients</p>{data.ingridients}
               </Card.Text>
