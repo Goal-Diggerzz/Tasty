@@ -6,7 +6,7 @@ import Header from './components/utilites/header';
 import Recipes from './components/view/recipes';
 import Search from './components/Search';
 import ModalApp from './components/modalApp';
-import Footer from './components/utilites/footer';
+// import Footer from './components/utilites/footer';
 import Blogs from './components/view/blogs';
 import AboutUs from './components/AboutUs';
 import axios from 'axios';
@@ -162,7 +162,7 @@ console.log(isAuthenticated);
 
            
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
         </BrowserRouter>
         
