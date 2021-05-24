@@ -28,23 +28,10 @@ constructor(props){
                             <Form.Label>My Recipes</Form.Label>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control  type="text" placeholder="Enter book name" />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicText">
-                            <Form.Label>Description</Form.Label>
-                            <Form.Control  type="text" placeholder="Enter book description" />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicText">
-                            <Form.Label>Status</Form.Label>
-                            <Form.Control type="text" placeholder="Enter read status" />
-                        </Form.Group>
-                    </Form>
-                    {/* <Button variant="secondary" onClick={this.props.handleClose} >Close</Button> */}
-                    <Button variant="primary" >Add Book</Button>
-            
+                            <Form.Label>label</Form.Label>
+                            <Form.Control  type="text" placeholder="" />      
+                         </Form.Group>
+                            </Form>      
             </div>
         )
     }

@@ -45,6 +45,9 @@ export class App extends Component {
     console.log('this is showCards', this.state.showCards);
   }
 
+  componentDidMount=()=>{
+    this.getRecipesData();
+  }
 
   updateQuery = (e) => {
     e.preventDefault()
@@ -100,9 +103,16 @@ console.log(this.state.query);
           <switch>
 
             <Route exact path="/recipes">
-              <Recipes showModalFunc={this.showModalFunc}
-                getRecipesData={this.getRecipesData}
+              <Recipes
+              //  showModalFunc={this.showModalFunc}
+                // getRecipesData={this.getRecipesData}
+
+              foodData={this.state.recipiesData}
               />
+                <Search
+              getRecipesData={this.getRecipesData}
+              updateQuery={this.updateQuery}
+            />
             </Route>
 
             <Route exact path="/blogs">
@@ -114,28 +124,23 @@ console.log(this.state.query);
               <Profile />
 
             </Route>
-            <Route exact path="/ok">
-              <Recipes
-              foodData={this.state.recipiesData} />
 
-            </Route>
-            <Route exact path="/nice">
+            <Route exact path="/">
+              
 
-            <Search
-          getRecipesData={this.getRecipesData}
-          updateQuery={this.updateQuery}
-        />
             </Route>
           </switch>
-          <ModalApp closeModal={this.closeModal} showModal={this.state.showModal} />
+          <ModalApp 
+          // closeModal={this.closeModal} showModal={this.state.showModal}
+           />
 
 
         </Router>
-        <Home
-          updateRender={this.updateRender}
-          showCards={this.state.showCards}
-
-        />
+          <Home
+            updateRender={this.updateRender}
+            showCards={this.state.showCards}
+  
+          />
         <Footer />
       </>
 
