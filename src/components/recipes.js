@@ -2,36 +2,40 @@ import React, { Component } from "react";
 import {  Card, CardDeck } from "react-bootstrap";
 // import CardDeck from "react-bootstrap/CardDeck";
 import axios from 'axios'
-
+let recipesData = [];
 export class Recipes extends Component {
 
   render() {
-    // let recipesData = this.props.recipesData;
-
+    recipesData = this.props.foodData;
     return (
-      this.props.foodData.map(data => {
+      recipesData.map(data => {
         return (
           <div>
-            <CardDeck>
-              <Card style={{ width: "18rem" }}>
+            <CardDeck style={{ width: "30%" ,textAlign:'center'}}>
+              <Card style={{ width: "30%" }}>
                 <Card.Body>
                   <Card.Title>{data.label}</Card.Title>
-                  <Card.Img>
-                    {data.img}
-                  </Card.Img>
+                  <Card.Img src={data.img}/>
+                    {/* {data.img} */}
                   <Card.Text>
-                    {data.ingridients}
+                    <p>Ingredients</p>{data.ingridients}
               </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                  {data.calories}
+                  <p>Calories</p>{data.calories}
                 </Card.Footer>
               </Card>
             </CardDeck>
           </div>
         )
-
+      
       })
+
+      );
+    }
+  }
+  
+  export default Recipes;
 
       // <>
 
@@ -48,8 +52,3 @@ export class Recipes extends Component {
       //     <Button onClick={this.getRecipe}  variant="primary" >Add</Button>
 
       // </>
-    );
-  }
-}
-
-export default Recipes;
