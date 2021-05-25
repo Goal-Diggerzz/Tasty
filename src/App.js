@@ -12,6 +12,8 @@ import AboutUs from './components/AboutUs';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/view/Profile'
+import Test from './components/view/AboutTest'
+
 import RecipesPopUp from './components/view/popUpRecipes'
 import IsLoadingAndError from './components/utilites/loading'
 import {
@@ -181,6 +183,10 @@ export class App extends Component {
               </Route>
               <Route exact path="/aboutus">
                 <AboutUs />
+
+              </Route>
+               <Route exact path="/test">
+                <Test />
 
               </Route>
 
