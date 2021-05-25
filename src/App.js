@@ -47,15 +47,7 @@ export class App extends Component {
 
 
 
-  updateRender = (e) => {
 
-    e.preventDefault();
-    this.setState({
-      showCards: false,
-
-    });
-    console.log('this is showCards', this.state.showCards);
-  }
 
   componentDidMount = () => {
     this.getRecipesData();
@@ -125,6 +117,7 @@ export class App extends Component {
 
 
 
+
   addFav = async (data) => {
     console.log(data)
     await this.setState({
@@ -132,11 +125,11 @@ export class App extends Component {
     });
 
     this.addFavPost();
-    // this.getMyRecipes();
+    
   };
   render() {
     const { isAuthenticated } = this.props.auth0;
-    // const { isAuthenticated } = this.props.auth0;
+   
     console.log(isAuthenticated);
     return (
 
