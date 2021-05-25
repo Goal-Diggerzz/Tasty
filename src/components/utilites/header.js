@@ -1,12 +1,17 @@
+import { withAuth0 } from '@auth0/auth0-react';
 import React, { Component } from 'react';
 import '../../assets/header.css';
 import logo from '../../assets/logo_transparent.png';
 import LoginButton from '../login';
+import LogoutButton from '../utilites/logout'
 // import { Link} from "react-router";
+import Dropdown_myaccount from '../view/Dropdown_myaccount' 
 
 
 export class Header extends Component {
   render() {
+    const { isAuthenticated } = this.props.auth0;
+    // const { isAuthenticated } = this.props.auth0;
     return (
       <>
         <div id="abc">
@@ -25,7 +30,11 @@ export class Header extends Component {
               <li><a href="http://localhost:3000/profile">profile</a></li>
               <li><a href="http://localhost:3000/AboutUs">About Us</a></li>
               <li >
+                {(isAuthenticated) ?
+                  <Dropdown_myaccount />
+                  :
                   <LoginButton />
+                }
 
               </li>
             </ul>
@@ -38,5 +47,5 @@ export class Header extends Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);
 

@@ -5,21 +5,22 @@ import Home from './components/view/homePage';
 import Header from './components/utilites/header';
 import Recipes from './components/view/recipes';
 import Search from './components/Search';
-import ModalApp from './components/modalApp';
+// import ModalApp from './components/modalApp';
 import Footer from './components/utilites/footer';
 import Blogs from './components/view/blogs';
 import AboutUs from './components/AboutUs';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/view/Profile'
-import IsLoadingAndError from './components/utilites/loading'
+// import IsLoadingAndError from './components/utilites/loading'
+// import LandingPage from './components/view/Dropdown_myaccount'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   BrowserRouter
 } from "react-router-dom";
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
+// import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 
 export class App extends Component {
@@ -126,7 +127,7 @@ export class App extends Component {
   //     this.setState({
   //       newFavSasasasasasasasa: favRec.data,
   //       // showModal: true
-        
+
   //     });
   //     console.log(`paaaalllleeeeeeeeez`, this.state.newFavSasasasasasasasa);
   //   }
@@ -157,19 +158,20 @@ export class App extends Component {
         <BrowserRouter>
 
           <Router>
-            <Header />
             <Switch>
+                <Header />
               <Route exact path="/">
-                <Home
+            
+                  <Home
                   updateRender={this.updateRender}
                   showCards={this.state.showCards}
-
-                />
+                  />
+                 
               </Route>
               <Route exact path="/recipes">
                 <Recipes foodData={this.state.recipiesData}
-                  addFav={this.addFav} 
-                  // getMyRecipes={this.getMyRecipes}
+                  addFav={this.addFav}
+                // getMyRecipes={this.getMyRecipes}
                 />
                 <Search
                   getRecipesData={this.getRecipesData}
@@ -177,17 +179,17 @@ export class App extends Component {
                 />
               </Route>
 
-                         <Route exact path="/blogs">
-              { isAuthenticated&& <Blogs />}
+              <Route exact path="/blogs">
+                {isAuthenticated && <Blogs />}
 
               </Route>
 
               <Route exact path="/profile">
-                {(isAuthenticated)&&
-                <Profile favouriteData={this.state.favouriteData}
+                {(isAuthenticated) &&
+                  <Profile favouriteData={this.state.favouriteData}
                   // newFavSasasasasasasasa={this.state.newFavSasasasasasasasa}
                   // getMyRecipes={this.getMyRecipes}
-                   />}
+                  />}
 
               </Route>
               <Route exact path="/aboutus">

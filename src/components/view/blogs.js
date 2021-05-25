@@ -28,7 +28,7 @@ export class blogs extends Component {
   // updateComment = (e) => this.setState({ comment: e.target.value });
   getBlogs=async ()=>{
     const {user}=this.props.auth0
-    const blogUrl = `http://localhost:3001/blog?q=frfr`
+    const blogUrl = `http://localhost:3001/blog?${user.email}`
     const reqBlogData=await axios.get(blogUrl);
 this.setState({
 blogData:reqBlogData.data,
