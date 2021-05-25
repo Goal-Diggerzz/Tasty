@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 // import RecipesPopUp from './popUpRecipes'
+
 // import CardDeck from "react-bootstrap/CardDeck";
 // import axios from 'axios';
 let recipesData = [];
@@ -73,6 +74,7 @@ export class Recipes extends Component {
     recipesData = this.props.foodData;
     console.log('the recipes data', this.props.foodData);
     return (
+
 
       <>
         {this.state.myLabel ? null
@@ -194,6 +196,7 @@ export class Recipes extends Component {
 
       </>
     );
+
   }
 }
 

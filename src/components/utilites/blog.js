@@ -1,22 +1,34 @@
 import React, { Component } from 'react'
-import {Card,Col,Button} from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
+import { withAuth0 } from '@auth0/auth0-react';
+
 export class blog extends Component {
     render() {
+      const {user}=this.props.auth0
+
         return (
-            <Col>
-            <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://www.seriouseats.com/thmb/DnWB-PZBxur68tk5BsaB6vORpyg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2017__12__20171201-bravetart-brownies-vicky-wasik-15-8f17e2742f05443ead4de0b887d339fb.jpg" />
-          <Card.Body>
-            <Card.Title>Glossy Fudge Brownies Recipe | BraveTart</Card.Title>
-            <Card.Text>
-            By Stella Parks
-            </Card.Text>
-            <Button variant="primary">Show more</Button>
-          </Card.Body>
-        </Card>
-            </Col>
+          
+          <div className="col-md-4 md-41">
+          <div className="card text-center shadow card1">
+          <div className="overflow overflow1">
+            <img src={this.props.img} className="card-img-top imgtop1"/>
+          </div>
+          <div className="card-body text-dark card-body1">
+            <h4 className="card-title">
+              {this.props.title}
+            </h4>
+            <p className="card-text text-secondary card-text1">
+           Posted By {this.props.name}
+            </p>
+            <a href="#" className="btn btn-outline-success">
+              See More
+            </a>
+            {user.email===this.props.email && <Button onClick={()=>this.props.removeBlog(this.props.idx)} variant='danger'>Remove</Button> }
+            </div>  
+        </div>
+        </div>
         )
     }
 }
 
-export default blog
+export default withAuth0(blog);
