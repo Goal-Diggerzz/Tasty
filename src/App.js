@@ -42,15 +42,7 @@ export class App extends Component {
 
 
 
-  updateRender = (e) => {
 
-    e.preventDefault();
-    this.setState({
-      showCards: false,
-
-    });
-    console.log('this is showCards', this.state.showCards);
-  }
 
   componentDidMount = () => {
     this.getRecipesData();
@@ -112,28 +104,7 @@ export class App extends Component {
     });
   };
 
-  // getMyRecipes = async () => {
-  //   try {
-  //     const { user } = this.props.auth0;
-  //     // const paramsObj = {
-  //     //   email: user.email
-  //     // }
-  //     console.log(this.state.query);
-
-  //     const url = `http://localhost:3001/cheff?email=${user.email}`
-  //     const favRec = await axios.get(url);
-  //     console.log(`please give me Rec`, favRec.data);
-  //     this.setState({
-  //       newFavSasasasasasasasa: favRec.data,
-  //       // showModal: true
-        
-  //     });
-  //     console.log(`paaaalllleeeeeeeeez`, this.state.newFavSasasasasasasasa);
-  //   }
-  //   catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+  
 
 
   addFav = (data) => {
@@ -144,11 +115,11 @@ export class App extends Component {
       });
     }, 1000)
     this.addFavPost();
-    // this.getMyRecipes();
+    
   };
   render() {
     const { isAuthenticated } = this.props.auth0;
-    // const { isAuthenticated } = this.props.auth0;
+   
     console.log(isAuthenticated);
     return (
 
