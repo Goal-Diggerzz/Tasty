@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { Card, CardDeck, Button } from "react-bootstrap";
-import CardColumns from 'react-bootstrap/CardColumns';
+import { Card, CardDeck, Button, Col } from "react-bootstrap";
+import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
 import Popover from 'react-bootstrap/Popover';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 // import RecipesPopUp from './popUpRecipes'
 
 // import CardDeck from "react-bootstrap/CardDeck";
@@ -22,6 +24,8 @@ export class Recipes extends Component {
       myLabel: '',
       alt: '',
       img: '',
+      welShow: false,
+
 
     }
 
@@ -73,24 +77,29 @@ export class Recipes extends Component {
 
 
       <>
+        {this.state.myLabel ? null
+          :
 
-        <CardColumns style={{ marginTop: '100px', width: '89%', marginLeft: '10%' }}>
+          <Jumbotron>
+            <h1 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }}>Havent Discovered our Delicious Recipies Yet! </h1>
+            <p>
+              This is a simple hero unit, a simple jumbotron-style component for calling
+              extra attention to featured content or information.
+            </p>
 
-          {recipesData.map((data, idx) => {
-            return (
-              <div>
+          </Jumbotron>
+        }
+        <Container>
+          <Row md={3}
+          //  style={{ marginTop: '100px', width: '90%', marginLeft: '10%' }}
+          >
 
+            {recipesData.map((data, idx) => {
+              return (
 
-                <Card key={idx} style={{ width: "20rem", height: '27rem' }}>
-                  <Card.Body>
-                    <Card.Title style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }}
-                    >{data.label}</Card.Title>
-                    {/* <a
-                     href='http://localhost:3000/selected'
+                <Col>
 
-
-                    // onClick={() => this.props.addFav(data)}
-                    > */}
+                  <Card key={idx} style={{ width: "20rem", height: '27rem', marginBottom: '20px' }}>
                     <div style={{ overflow: 'hidden' }}>
                       <Card.Img
                         className='zoomPic'
@@ -104,29 +113,38 @@ export class Recipes extends Component {
 
                       />
                     </div>
+                    <Card.Body className='text-center'>
+                      <Card.Title style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder', marginTop: '20px' }}
+                      >{data.label}</Card.Title>
+                      {/* <a
+                     href='http://localhost:3000/selected'
 
-                    {/* {data.img} */}
 
-                    {/* </a> */}
+                    // onClick={() => this.props.addFav(data)}
+                    > */}
 
 
-                    <Card.Text>
+                      {/* {data.img} */}
 
-                    </Card.Text>
-                  </Card.Body>
-                  {/* <Card.Footer>
+                      {/* </a> */}
+
+                      <Button variant="primary" style={{ backgroundColor: 'white', color: 'rgb(20, 63, 83)', marginBottom: '40px' }} onClick={() => this.props.addFav(data)}> Add To Favorite❤️</Button>
+
+                    </Card.Body>
+                    {/* <Card.Footer>
                     <p>Calories</p>{data.calories}
                   </Card.Footer> */}
-                  <Button variant="primary" style={{ backgroundColor: 'white', color: 'rgb(20, 63, 83)', marginLeft: '60px', marginBottom: '40px' }} onClick={() => this.props.addFav(data)}> Add To Favorite❤️</Button>
-                  {/* <Button onClick={(e) => this.showFunc(e)} variant="primary">Go somewhere</Button> */}
 
-                </Card>
-              </div>
-            )
+                    {/* <Button onClick={(e) => this.showFunc(e)} variant="primary">Go somewhere</Button> */}
 
-          })}
+                  </Card>
+                </Col>
+              )
 
-        </CardColumns>
+            })}
+
+          </Row>
+        </Container>
         {
           this.state.show &&
           // <RecipesPopUp
@@ -156,7 +174,7 @@ export class Recipes extends Component {
           >
             <Modal.Header closeButton>
               <Modal.Title style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }} id="example-custom-modal-styling-title">
-                {this.state.myLabel}
+                ingredients of  {this.state.myLabel}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
