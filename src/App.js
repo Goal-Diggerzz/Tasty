@@ -74,10 +74,11 @@ export class App extends Component {
     localStorage.setItem('recipesFromApi', JSON.stringify(expressReq.data))
     this.setState({
       recipiesData: expressReq.data,
-      showModal: true
+      showModal: true,
 
     });
     console.log('the recipes', this.state.recipiesData);
+
   }
 
 
@@ -153,6 +154,8 @@ export class App extends Component {
                 />
                 <Recipes foodData={this.state.recipiesData}
                   addFav={this.addFav}
+                  getRecipesData={this.getRecipesData}
+                  welShow={this.state.welShow}
                 />
               </Route>
 
@@ -165,6 +168,7 @@ export class App extends Component {
               <Route exact path="/selected">
                 {isAuthenticated && <RecipesPopUp
                   recipiesData={this.state.recipiesData}
+
 
                 />}
 
