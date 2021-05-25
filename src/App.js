@@ -155,6 +155,7 @@ export class App extends Component {
       <>
 
         <BrowserRouter>
+
           <Router>
             <Header />
             <Switch>
@@ -176,8 +177,8 @@ export class App extends Component {
                 />
               </Route>
 
-              <Route exact path="/blogs">
-                <Blogs />
+                         <Route exact path="/blogs">
+              { isAuthenticated&& <Blogs />}
 
               </Route>
 
@@ -199,6 +200,7 @@ export class App extends Component {
             </Switch>
             <Footer />
           </Router>
+
         </BrowserRouter>
 
       </>

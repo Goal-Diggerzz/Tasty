@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Form, Row, Col, Button, Card,Container,ListGroup,ListGroupItem } from 'react-bootstrap';
 import { withAuth0 } from '@auth0/auth0-react';
-import axios from 'axios'
-import Blog from '../utilites/blog'
+import axios from 'axios';
+import Blog from '../utilites/blog';
+import  '../../assets/blog.css';
 export class blogs extends Component {
 
 
@@ -26,18 +27,23 @@ export class blogs extends Component {
   updateblog = (e) => this.setState({ blog: e.target.value });
   // updateComment = (e) => this.setState({ comment: e.target.value });
   getBlogs=async ()=>{
-    
-    const blogUrl = `http://localhost:3001/blog`
+    const {user}=this.props.auth0
+    const blogUrl = `http://localhost:3001/blog?q=frfr`
     const reqBlogData=await axios.get(blogUrl);
 this.setState({
 blogData:reqBlogData.data,
 
 }) 
+console.log(this.state.blogData);
 
 }
 
+
 componentDidMount(){
-  this.getBlogs();
+  const {isAuthenticated}=this.props.auth0;
+  console.log(isAuthenticated);
+
+ ( isAuthenticated && this.getBlogs())
 }
 
 addBlog = async (e) => {
@@ -114,8 +120,8 @@ const {user}=this.props.auth0
         </div>
         <Container>
   
-  <Row>
-    <Col>
+  <Row >
+    <Col xs={12} md={4}>
     <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="https://www.seriouseats.com/thmb/TCo4MAh5Jy4y5Q1oc1BVx5z9_ho=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__09__20120914-smashed-burgers-10-260d32eebb994b60b0a0f078e904f65f.jpg" />
   <Card.Body>
@@ -126,8 +132,8 @@ const {user}=this.props.auth0
     <Button variant="primary">Show more</Button>
   </Card.Body>
 </Card>
-    </Col>
-    <Col>  
+    </Col >
+    <Col xs={12} md={4}>  
     <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="https://www.seriouseats.com/thmb/CnsS6yn6NXiid0lqmFzYizg56ns=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__08__20200817-Panaeng-Neua-derek-lucci-1-26689646c93c4889bdd1de4f6b763af2.jpg" />
   <Card.Body>
@@ -139,7 +145,7 @@ const {user}=this.props.auth0
   </Card.Body>
 </Card>
 </Col>
-    <Col>
+    <Col xs={12} md={4}>
     <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="https://www.seriouseats.com/thmb/DnWB-PZBxur68tk5BsaB6vORpyg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2017__12__20171201-bravetart-brownies-vicky-wasik-15-8f17e2742f05443ead4de0b887d339fb.jpg" />
   <Card.Body>
