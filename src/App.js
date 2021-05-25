@@ -151,8 +151,9 @@ console.log(isAuthenticated);
             </Route>
 
             <Route exact path="/profile">
+            {(isAuthenticated )&&
               <Profile  favouriteData={this.state.favouriteData}/>
-
+            }
             </Route>
             <Route exact path="/aboutus">
               <AboutUs/>

@@ -2,10 +2,11 @@ import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
-import sushi from '/home/moe/codefellows/Tasty/src/assests/sushi.jpg';
-import waffle from '/home/moe/codefellows/Tasty/src/assests/waffle.jpg';
-import parmizan from '/home/moe/codefellows/Tasty/src/assests/parmizan.jpg';
+import sushi from '../../assests/sushi.jpg';
+import waffle from '../../assests/waffle.jpg';
+import parmizan from '../../assests/parmizan.jpg';
 import { withAuth0 } from '@auth0/auth0-react';
+
 
 // import Image from 'react-bootstrap/Image';
 // import Row from 'react-bootstrap/Row';
