@@ -265,3 +265,24 @@ margin-top: 100px;
  
 
 }
+
+.imgaccount{
+  border-radius: 50%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  margin-left: 20%;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+
+/* .row{
+  height:800px;
+  width: 100%;
+}
+.container-true{
+  height:500px;
+  width: 100%;
+} */
+
+
