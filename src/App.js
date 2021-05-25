@@ -34,6 +34,8 @@ export class App extends Component {
       title: '',
       description: '',
       query: '',
+      selectedFavData: '',
+      // newFavSasasasasasasasa: [],
     };
   }
 
@@ -50,7 +52,7 @@ export class App extends Component {
     console.log('this is showCards', this.state.showCards);
   }
 
-  componentDidMount=()=>{
+  componentDidMount = () => {
     this.getRecipesData();
   }
 
@@ -62,7 +64,7 @@ export class App extends Component {
   }
 
   getRecipesData = async () => {
-console.log(this.state.query);
+    console.log(this.state.query);
     const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`
 
     const expressReq = await axios.get(url);
@@ -96,76 +98,111 @@ console.log(this.state.query);
     const { user } = this.props.auth0;
     const favDataBody = {
       email: user.email,
+      label: this.state.selectedFavData.label,
       img: this.state.selectedFavData.img,
       calories: this.state.selectedFavData.calories,
-      label: this.state.selectedFavData.label,
-      ingredients: this.state.selectedFavData.ingridients,
+      ingredients: this.state.selectedFavData.ingredients,
     };
-    const url = `${process.env.REACT_APP_SERVER}/cheff`;
+    const url = `http://localhost:3001/cheff`;
     const favData = await axios.post(url, favDataBody);
-    console.log(favData)
+    console.log(`Posting data`, this.state.favouriteData)
     console.log(favDataBody)
     this.setState({
-      favData: favData.data.myRecipes,
+      favouriteData: favData.data.myRecipes,
     });
   };
-  addFav = async (data) => {
-    console.log(data)
-    await this.setState({
-      selectedFavData: data,
-    });
+
+  // getMyRecipes = async () => {
+  //   try {
+  //     const { user } = this.props.auth0;
+  //     // const paramsObj = {
+  //     //   email: user.email
+  //     // }
+  //     console.log(this.state.query);
+
+  //     const url = `http://localhost:3001/cheff?email=${user.email}`
+  //     const favRec = await axios.get(url);
+  //     console.log(`please give me Rec`, favRec.data);
+  //     this.setState({
+  //       newFavSasasasasasasasa: favRec.data,
+  //       // showModal: true
+        
+  //     });
+  //     console.log(`paaaalllleeeeeeeeez`, this.state.newFavSasasasasasasasa);
+  //   }
+  //   catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+
+  addFav = (data) => {
+    setTimeout(() => {
+      console.log(`this the data line 142`, data)
+      this.setState({
+        selectedFavData: data,
+      });
+    }, 1000)
     this.addFavPost();
+    // this.getMyRecipes();
   };
   render() {
-const {isAuthenticated}= this.props.auth0;
+    const { isAuthenticated } = this.props.auth0;
     // const { isAuthenticated } = this.props.auth0;
-console.log(isAuthenticated);
+    console.log(isAuthenticated);
     return (
 
       <>
-      
+
         <BrowserRouter>
-        <Router>
-        <Header />
-          <Switch>
-<Route exact path="/">
-<Home
-          updateRender={this.updateRender}
-          showCards={this.state.showCards}
 
-        />
-</Route>
-            <Route exact path="/recipes">
-              <Recipes foodData={this.state.recipiesData}
-              addFav={this.addFav}
-              /> 
-                 <Search
-          getRecipesData={this.getRecipesData}
-          updateQuery={this.updateQuery}
-           />
-            </Route>
+          <Router>
+            <Header />
+            <Switch>
+              <Route exact path="/">
+                <Home
+                  updateRender={this.updateRender}
+                  showCards={this.state.showCards}
 
-            <Route exact path="/blogs">
+                />
+              </Route>
+              <Route exact path="/recipes">
+                <Recipes foodData={this.state.recipiesData}
+                  addFav={this.addFav} 
+                  // getMyRecipes={this.getMyRecipes}
+                />
+                <Search
+                  getRecipesData={this.getRecipesData}
+                  updateQuery={this.updateQuery}
+                />
+              </Route>
+
+                         <Route exact path="/blogs">
               { isAuthenticated&& <Blogs />}
 
-            </Route>
+              </Route>
 
-            <Route exact path="/profile">
-              <Profile  favouriteData={this.state.favouriteData}/>
+              <Route exact path="/profile">
+                {(isAuthenticated)&&
+                <Profile favouriteData={this.state.favouriteData}
+                  // newFavSasasasasasasasa={this.state.newFavSasasasasasasasa}
+                  // getMyRecipes={this.getMyRecipes}
+                   />}
 
-            </Route>
-            <Route exact path="/aboutus">
-              <AboutUs/>
+              </Route>
+              <Route exact path="/aboutus">
+                <AboutUs />
 
-            </Route>
-          
+              </Route>
 
-           
-          </Switch>
-          <Footer />
-        </Router>
+
+
+            </Switch>
+            <Footer />
+          </Router>
+
         </BrowserRouter>
-        
+
       </>
 
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '/home/moe/codefellows/Tasty/src/assets/header.css';
-import logo from '/home/moe/codefellows/Tasty/src/assets/logo_transparent.png';
+import '../../assets/header.css';
+import logo from '../../assets/logo_transparent.png';
 import LoginButton from '../login';
 // import { Link} from "react-router";
 
