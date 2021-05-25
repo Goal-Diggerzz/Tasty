@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Container, Row, Col, Carousel } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
-
+import axios from 'axios'
 export class Profile extends Component {
   constructor(props) {
     super(props);
@@ -10,46 +10,61 @@ export class Profile extends Component {
       img: String,
       calories: Number,
       ingredients: [],
+      newFavSasasasasasasasa: [],
     };
   }
 
   componentDidMount = () => {
-    this.addRecipe();
+    this.getMyRecipes();
   };
-  addRecipe = () => {};
+  getMyRecipes = async () => {
+    try {
+      const { user } = this.props.auth0;
+      // const paramsObj = {
+      //   email: user.email
+      // }
+      const url = `http://localhost:3001/cheff?email=${user.email}`
+      const favRec = await axios.get(url);
+      console.log(`please give me Rec`, favRec.data);
+      this.setState({
+        newFavSasasasasasasasa: favRec.data,
+        // showModal: true
+
+      });
+      }
+    catch (error) {
+      console.log(`paaaalllleeeeeeeeez`, this.state.newFavSasasasasasasasa);
+      console.log(error);
+    }
+  }
   render() {
-      let testNames= this.props.favouriteData;
+    // let testNames= this.props.favouriteData;
     const { user, isAuthenticated } = this.props.auth0;
-    console.log(testNames);
+    console.log(this.state.newFavSasasasasasasasa);
     return (
       <div>
         {isAuthenticated && (
           <>
-            <img src={user.picture} />
+            <img src={user.picture} alt='' />
             <h2>{user.name}</h2>
 
             <Container>
               <Row>
                 <Col>
                   <h3>Favorite Recipes</h3>
-                  <Carousel fade>
-                  {testNames.map((data)=>
-                    <Carousel.Item>
-                      <img
-                        className="d-block w-100"
-                        src={data.img}
-                        alt="First slide"
-                      />
-                      <Carousel.Caption>
-                        <h3>{data.name}</h3>
-                        <p>
-                          Nulla vitae elit libero, a pharetra augue mollis
-                          interdum.
-                        </p>
-                      </Carousel.Caption>
-                    </Carousel.Item>
+                    {this.state.newFavSasasasasasasasa.map((data) =>
+                        <>
+                        <img
+                          className="d-block w-100"
+                          src={data.img}
+                          alt="First slide"
+                        />
+                          <h3>{data.label}</h3>
+                          <p>
+                            {data.ingredients}
+                          </p>
+                          </>
                     )}
-                  </Carousel>
                 </Col>
                 <Col>
                   <h3>My Blogs</h3>
