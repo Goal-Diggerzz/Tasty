@@ -2,6 +2,7 @@
   width: auto;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap');
 
 .head{
   font-family: 'Merienda One', cursive;
@@ -12,12 +13,6 @@
   text-align: center;
 }
 
-.homebk{
-  /* background-image: url(./assests/ssu.jpg); */
-  width: auto;
-  height: 600px;
-  background-repeat: no-repeat;
-}
 .hr {
   width: 400px;
   height: 1px;
@@ -264,4 +259,23 @@ margin-top: 100px;
   margin-right: 5%;
  
 
+}
+.homePage{
+  background-image: url('./assests/ssu.jpg');
+    background-repeat:repeat-x;
+    background-attachment:fixed;
+    background-position: left top;
+    position:absolute;
+    height:744px;
+}
+
+.homebk{
+  /* background-image: url(./assests/ssu.jpg); */
+  clear: both;
+  width: auto;
+  height: 600px;
+  background-repeat: no-repeat;
+}
+.overFlow{
+  overflow: hidden;
 }
