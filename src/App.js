@@ -12,6 +12,7 @@ import AboutUs from './components/AboutUs';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/view/Profile'
+import RecipesPopUp from './components/view/popUpRecipes'
 import IsLoadingAndError from './components/utilites/loading'
 import {
   BrowserRouter as Router,
@@ -34,6 +35,8 @@ export class App extends Component {
       title: '',
       description: '',
       query: '',
+      // selectedRecipe: '',
+      selectedFavData: '',
     };
   }
 
@@ -67,12 +70,14 @@ export class App extends Component {
     const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`
 
     const expressReq = await axios.get(url);
-    console.log(expressReq.data);
+    // console.log('the Express data', expressReq.data);
+    localStorage.setItem('recipesFromApi', JSON.stringify(expressReq.data))
     this.setState({
       recipiesData: expressReq.data,
       showModal: true
 
     });
+    console.log('the recipes', this.state.recipiesData);
   }
 
 
@@ -93,7 +98,7 @@ export class App extends Component {
   };
 
   addFavPost = async () => {
-    console.log(this.state.selectedFavData)
+    console.log('the fav data from maraim', this.state.selectedFavData)
     const { user } = this.props.auth0;
     const favDataBody = {
       email: user.email,
@@ -110,6 +115,11 @@ export class App extends Component {
       favData: favData.data.myRecipes,
     });
   };
+
+
+
+
+
   addFav = async (data) => {
     console.log(data)
     await this.setState({
@@ -150,6 +160,17 @@ export class App extends Component {
                 <Blogs />
 
               </Route>
+
+
+              <Route exact path="/selected">
+                {isAuthenticated && <RecipesPopUp
+                  recipiesData={this.state.recipiesData}
+
+                />}
+
+
+              </Route>
+
 
               <Route exact path="/profile">
                 <Profile favouriteData={this.state.favouriteData} />

@@ -21,9 +21,9 @@ class Search extends React.Component {
             </div>
           </div>
         </Form.Group>
-        <button className='s' onClick={() => this.props.getRecipesData} variant="primary">
+        <Button className='s' onClick={() => this.props.getRecipesData()} variant="primary">
           Search 🔎
-                </button>
+                </Button>
       </Form  >
     );
   }
