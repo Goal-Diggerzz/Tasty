@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  Card, CardDeck, Button } from "react-bootstrap";
+import {  Card, CardDeck, Button, CardColumns } from "react-bootstrap";
 // import CardDeck from "react-bootstrap/CardDeck";
 import axios from 'axios'
 let recipesData = [];
@@ -12,6 +12,7 @@ export class Recipes extends Component {
       recipesData.map(data => {
         return (
           <div>
+            <CardColumns>
             <CardDeck style={{ width: "30%" ,textAlign:'center'}}>
               <Card style={{ width: "30%" }}>
                 <Card.Body>
@@ -19,7 +20,7 @@ export class Recipes extends Component {
                   <Card.Img src={data.img}/>
                     {/* {data.img} */}
                   <Card.Text>
-                    <p>Ingredients</p>{data.ingridients}
+                    <p>Ingredients</p>{data.ingredients}
               </Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -28,6 +29,7 @@ export class Recipes extends Component {
                 <Button variant="primary" onClick={()=>this.props.addFav(data)}>❤️</Button>
               </Card>
             </CardDeck>
+            </CardColumns>
           </div>
         )
       

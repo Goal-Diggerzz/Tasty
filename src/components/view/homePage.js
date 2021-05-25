@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
@@ -8,6 +9,17 @@ import parmizan from "../../assests/rsz_parmizan.jpg";
 import { withAuth0 } from "@auth0/auth0-react";
 import Footer from "../utilites/footer";
 import Carousel from 'react-bootstrap/Carousel';
+=======
+import React from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Card from 'react-bootstrap/Card';
+import CardColumns from 'react-bootstrap/CardColumns';
+import sushi from '../../assests/sushi.jpg';
+import waffle from '../../assests/waffle.jpg';
+import parmizan from '../../assests/parmizan.jpg';
+import { withAuth0 } from '@auth0/auth0-react';
+
+>>>>>>> test
 // import Image from 'react-bootstrap/Image';
 // import Row from 'react-bootstrap/Row';
 // import pasta from '../assests/pastaa.jpg';
