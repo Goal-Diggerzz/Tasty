@@ -146,7 +146,7 @@ console.log(isAuthenticated);
             </Route>
 
             <Route exact path="/blogs">
-              <Blogs />
+              { isAuthenticated&& <Blogs />}
 
             </Route>
 
