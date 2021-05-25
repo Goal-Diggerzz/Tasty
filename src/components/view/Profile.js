@@ -54,6 +54,7 @@ export class Profile extends Component {
                   <h3>Favorite Recipes</h3>
                     {this.state.newFavSasasasasasasasa.map((data) =>
                         <>
+                        {console.log(data.img)}
                         <img
                           className="d-block w-100"
                           src={data.img}
