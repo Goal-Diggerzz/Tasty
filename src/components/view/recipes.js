@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Popover from 'react-bootstrap/Popover';
 import ListGroup from 'react-bootstrap/ListGroup';
 // import RecipesPopUp from './popUpRecipes'
+
 // import CardDeck from "react-bootstrap/CardDeck";
 // import axios from 'axios';
 let recipesData = [];
@@ -69,6 +70,7 @@ export class Recipes extends Component {
     recipesData = this.props.foodData;
     console.log('the recipes data', this.props.foodData);
     return (
+
 
       <>
 
@@ -176,6 +178,7 @@ export class Recipes extends Component {
 
       </>
     );
+
   }
 }
 
