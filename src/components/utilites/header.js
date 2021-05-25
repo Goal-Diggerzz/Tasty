@@ -26,7 +26,7 @@ export class Header extends Component {
               <li><a href="http://localhost:3000/profile">profile</a></li>
               <li><a href="http://localhost:3000/AboutUs">About Us</a></li>
               <li >
-                  <LoginButton />
+                <LoginButton />
 
               </li>
             </ul>
