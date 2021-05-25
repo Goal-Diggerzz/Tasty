@@ -260,6 +260,225 @@ margin-top: 100px;
  
 
 }
+
+
+#formBasicText{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --woocommerce: $woocommerce;
+  --wc-green: $green;
+  --wc-red: $red;
+  --wc-orange: $orange;
+  --wc-blue: $blue;
+  --wc-primary: $primary;
+  --wc-primary-text: $primarytext;
+  --wc-secondary: $secondary;
+  --wc-secondary-text: $secondarytext;
+  --wc-highlight: $highlight;
+  --wc-highligh-text: $highlightext;
+  --wc-content-bg: $contentbg;
+  --wc-subtext: $subtext;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #242424;
+  font-family: Ubuntu;
+  visibility: visible;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  padding: 0;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border: 2px solid rgb(20, 63, 83);
+  visibility: visible;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Merienda One', cursive;
+
+  /* margin-left: 600px; */
+  position: absolute;
+  top:400px;
+
+  left:282px;
+
+
+}
+.s{
+  
+  position: absolute;
+  top:401px;
+background-color: none;
+  left:583px;
+  color:black;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 18px;
+  margin-left: -2px;
+
+
+  
+}
+
+.find{
+  font-size: 2rem;
+  padding: 30px;
+  position: absolute;
+  top: 176px;
+  left:100px;
+  color: rgba(255, 255, 255, 0.842);
+
+
+
+
+
+}
+.stat{
+  font-family: 'Merienda One', cursive;
+  color: white;
+
+  font-size: 1.5rem;
+  position: absolute;
+  top:300px;
+  left:  139px;
+
+  
+}
+
+/* #root > form > div > div > div{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --woocommerce: $woocommerce;
+  --wc-green: $green;
+  --wc-red: $red;
+  --wc-orange: $orange;
+  --wc-blue: $blue;
+  --wc-primary: $primary;
+  --wc-primary-text: $primarytext;
+  --wc-secondary: $secondary;
+  --wc-secondary-text: $secondarytext;
+  --wc-highlight: $highlight;
+  --wc-highligh-text: $highlightext;
+  --wc-content-bg: $contentbg;
+  --wc-subtext: $subtext;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #242424;
+  font-family: Ubuntu;
+  visibility: visible;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+#root > form > div > div{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --woocommerce: $woocommerce;
+  --wc-green: $green;
+  --wc-red: $red;
+  --wc-orange: $orange;
+  --wc-blue: $blue;
+  --wc-primary: $primary;
+  --wc-primary-text: $primarytext;
+  --wc-secondary: $secondary;
+  --wc-secondary-text: $secondarytext;
+  --wc-highlight: $highlight;
+  --wc-highligh-text: $highlightext;
+  --wc-content-bg: $contentbg;
+  --wc-subtext: $subtext;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #242424;
+  font-family: Ubuntu;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  visibility: visible;
+} */
+
+#root > form > div > div > div{
+  text-align: center;
+  display: block;
+
+}
+
+.s{
+
+}
+
+
+.myR{
+  width: 100%px;
+  height: 600px;
+  /* background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/17/f5/39/f7/fooood-at-the-food-department.jpg); */
+  /* display: block;  
+margin-left: 60px;  
+margin-right: auto;  
+border: 8px ridge rgba(109, 109, 126, 0.651);  
+padding: 5px;   */
+/* margin-top:40px; */
+  background-color: rgba(24, 21, 21, 0.829);
+  clear: both;
+
+}
+
+.up{
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/17/f5/39/f7/fooood-at-the-food-department.jpg);
+  width: 70%;
+  height: 600px;
+  display: block;  
+  margin-left: 140px;  
+  margin-right: auto;  
+  border: 8px ridge rgba(109, 109, 126, 0.651);  
+  padding: 5px;  
+  margin-top:40px;
+  clear: both;
+  /* float: left; */
+
+}
+
+.selectedDesc{
+  width: 800px;
+  margin-top: 30px;
+  text-align: center;
+  margin-left: 40px;
+  margin-bottom: 70px;
+  clear: both;
+  background-color: rgba(95, 158, 160, 0.164);
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.#root > div.up > div.list-group{
+  /* float: right; */
+  /* margin-left: 600px; */
+  width: 100px;
+  clear: both;
+}
+
+.zoomPic{
+  transition: transform .3s ease,opacity .3s;
+  -webkit-transition: -webkit-transform .3s ease,opacity .3s;
+}
+.zoomPic:hover{
+  -webkit-transform: scale3d(1.1,1.1,1);
+  -moz-transform: scale3d(1.1,1.1,1) rotate(.02deg);
+  opacity: .9;
+  cursor: pointer;
+  
+}
+
 .homePage{
   background-image: url('./assests/ssu.jpg');
     background-repeat:repeat-x;
@@ -279,3 +498,4 @@ margin-top: 100px;
 .overFlow{
   overflow: hidden;
 }
+

@@ -1,3 +1,4 @@
+
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
@@ -29,6 +30,7 @@ class Home extends React.Component {
   render() {
     const { user, isAuthenticated } = this.props.auth0;
     return (
+
       <>
         {/* {isAuthenticated && */}
         <div className="homePage">
@@ -192,6 +194,7 @@ class Home extends React.Component {
                   style={{marginLeft:"auto", marginRight:"auto", height: '600px'}}
                 />
 
+
                 <Carousel.Caption style={{display: "inline-block",textShadow: 'rgb(0 0 0) 3px -1px 4px', backgroundColor: "#0000006e", borderRadius: "5%"}}>
                   <h3 className='sliderText'>Third slide label</h3><br></br>
                   <p className='sliderText'>
@@ -218,54 +221,55 @@ class Home extends React.Component {
                   Some quick example text to build on the card title and make up the bulk of
                   the card's content.
                 </Card.Text>
-                <Card.Link className='link'
-                  style={{ fontFamily: 'italic', color: '#997b66' }}
-                  href="http://localhost:3000/blogs"
-                >See More</Card.Link>
+                    <Card.Link className='link'
+                      style={{ fontFamily: 'italic', color: '#997b66' }}
+                      href="http://localhost:3000/blogs"
+                    >See More</Card.Link>
 
-              </Card.Body>
-            </Card>
+                  </Card.Body>
+                </Card>
 
 
-            <Card style={{ width: '23rem' }}>
-              <Card.Body >
-                <div className='imageCont'>
-                  <Card.Img className='cardsImage' onClick={this.props.updateRender}
-                    style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }}
-                    src={waffle}
-                  />
-                </div>
-                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                <Card.Text
-                //  className='overlay' 
-                >
-                  Some quick example text to build on the card title and make up the bulk of
-                  the card's content.
+                <Card style={{ width: '23rem' }}>
+                  <Card.Body >
+                    <div className='imageCont'>
+                      <Card.Img className='cardsImage' onClick={this.props.updateRender}
+                        style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }}
+                        src={waffle}
+                      />
+                    </div>
+                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                    <Card.Text
+                    //  className='overlay' 
+                    >
+                      Some quick example text to build on the card title and make up the bulk of
+                      the card's content.
                 </Card.Text>
-                <Card.Link className='link'
-                  style={{ fontFamily: 'italic', color: '#997b66' }}
-                  href="http://localhost:3000/blogs"
-                >See More</Card.Link>
-              </Card.Body>
-            </Card>
+                    <Card.Link className='link'
+                      style={{ fontFamily: 'italic', color: '#997b66' }}
+                      href="http://localhost:3000/blogs"
+                    >See More</Card.Link>
+                  </Card.Body>
+                </Card>
 
-            <Card style={{ width: '23rem' }}>
-              <Card.Body>
-                <Card.Img className='cardsImage' onClick={this.props.updateRender}
-                  style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }}
-                  src={parmizan}
-                />
-                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                <Card.Text >
-                  Some quick example text to build on the card title and make up the bulk of
-                  the card's content.
+                <Card style={{ width: '23rem' }}>
+                  <Card.Body>
+                    <Card.Img className='cardsImage' onClick={this.props.updateRender}
+                      style={{ height: '17rem', width: '20rem', marginBottom: '2rem' }}
+                      src={parmizan}
+                    />
+                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                    <Card.Text >
+                      Some quick example text to build on the card title and make up the bulk of
+                      the card's content.
                 </Card.Text>
-                <Card.Link className='link'
-                  style={{ fontFamily: 'italic', color: '#997b66' }} href="http://localhost:3000/blogs"
-                >See More</Card.Link>
+                    <Card.Link className='link'
+                      style={{ fontFamily: 'italic', color: '#997b66' }} href="http://localhost:3000/blogs"
+                    >See More</Card.Link>
 
-              </Card.Body>
-            </Card>
+                  </Card.Body>
+                </Card>
+
 
           </CardColumns> */}
           </div>

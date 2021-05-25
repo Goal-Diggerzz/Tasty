@@ -12,6 +12,7 @@ import AboutUs from './components/AboutUs';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/view/Profile'
+import RecipesPopUp from './components/view/popUpRecipes'
 import IsLoadingAndError from './components/utilites/loading'
 import {
   BrowserRouter as Router,
@@ -34,8 +35,10 @@ export class App extends Component {
       title: '',
       description: '',
       query: '',
+
       selectedFavData: '',
       // newFavSasasasasasasasa: [],
+
     };
   }
 
@@ -64,16 +67,19 @@ export class App extends Component {
   }
 
   getRecipesData = async () => {
+
     console.log(this.state.query);
     const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`
 
     const expressReq = await axios.get(url);
-    console.log(expressReq.data);
+    // console.log('the Express data', expressReq.data);
+    localStorage.setItem('recipesFromApi', JSON.stringify(expressReq.data))
     this.setState({
       recipiesData: expressReq.data,
       showModal: true
 
     });
+    console.log('the recipes', this.state.recipiesData);
   }
 
 
@@ -94,7 +100,7 @@ export class App extends Component {
   };
 
   addFavPost = async () => {
-    console.log(this.state.selectedFavData)
+    console.log('the fav data from maraim', this.state.selectedFavData)
     const { user } = this.props.auth0;
     const favDataBody = {
       email: user.email,
@@ -112,37 +118,17 @@ export class App extends Component {
     });
   };
 
-  // getMyRecipes = async () => {
-  //   try {
-  //     const { user } = this.props.auth0;
-  //     // const paramsObj = {
-  //     //   email: user.email
-  //     // }
-  //     console.log(this.state.query);
-
-  //     const url = `http://localhost:3001/cheff?email=${user.email}`
-  //     const favRec = await axios.get(url);
-  //     console.log(`please give me Rec`, favRec.data);
-  //     this.setState({
-  //       newFavSasasasasasasasa: favRec.data,
-  //       // showModal: true
-        
-  //     });
-  //     console.log(`paaaalllleeeeeeeeez`, this.state.newFavSasasasasasasasa);
-  //   }
-  //   catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
 
-  addFav = (data) => {
-    setTimeout(() => {
-      console.log(`this the data line 142`, data)
-      this.setState({
-        selectedFavData: data,
-      });
-    }, 1000)
+
+
+
+  addFav = async (data) => {
+    console.log(data)
+    await this.setState({
+      selectedFavData: data,
+    });
+
     this.addFavPost();
     // this.getMyRecipes();
   };
@@ -156,6 +142,7 @@ export class App extends Component {
 
         <BrowserRouter>
 
+
           <Router>
             <Header />
             <Switch>
@@ -167,6 +154,7 @@ export class App extends Component {
                 />
               </Route>
               <Route exact path="/recipes">
+
                 <Recipes foodData={this.state.recipiesData}
                   addFav={this.addFav} 
                   // getMyRecipes={this.getMyRecipes}
@@ -175,6 +163,7 @@ export class App extends Component {
                   getRecipesData={this.getRecipesData}
                   updateQuery={this.updateQuery}
                 />
+
               </Route>
 
                          <Route exact path="/blogs">
@@ -198,8 +187,10 @@ export class App extends Component {
 
 
             </Switch>
+
             {/* <Footer /> */}
           </Router>
+
 
         </BrowserRouter>
 
