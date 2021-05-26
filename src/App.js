@@ -127,20 +127,20 @@ this.setState({
         },()=>this.getRecipesDataFromCat())
           }
 
-  deleteFav = async (index) => {
-    const { user } = this.props.auth0;
-    const newArrOfFav = this.state.favouriteData.filter((fav, idx) => {
-      return idx !== index;
-    });
-    this.setState({
-      newArrOfMariam: newArrOfFav,
-    })
-    console.log('laaaaaabel', this.state.newArrOfMariam);
-    console.log('innnndex', index);
-    const query = { email: user.email }
-    await axios.delete(`http://localhost:3001/cheff/${index}`, { params: query })
-    // window.location.reload();
-  }
+          deleteFav = async (index) => {
+            const { user } = this.props.auth0;
+            const newArrOfFav = this.state.favouriteData.filter((fav, idx) => {
+              return idx !== index;
+            });
+            this.setState({
+              newArrOfMariam: newArrOfFav,
+            })
+            console.log('laaaaaabel', this.state.newArrOfMariam);
+            console.log('innnndex', index);
+            const query = { email: user.email }
+            await axios.delete(`http://localhost:3001/cheff/${index}`,{ params: query })
+            window.location.reload();
+          }
 
 
   showModalFunc = () => {
@@ -225,14 +225,7 @@ this.setState({
             </Route>
 
 
-                <Recipes foodData={this.state.recipiesData}
-                  addFav={this.addFav}
-                // getMyRecipes={this.getMyRecipes}
-                />
-                <Search
-                  getRecipesData={this.getRecipesData}
-                  updateQuery={this.updateQuery}
-                />
+               
 
             <Route exact path="/blogs">
               {isAuthenticated && <Blogs getCardData={this.getCardData} />}
@@ -265,9 +258,7 @@ this.setState({
 
             </Route>
             
-            <Route exact path="/blog">
-              Hii
-</Route>
+            
 
 
           </Switch>
@@ -284,4 +275,4 @@ this.setState({
   }
 }
 
-export default withRouter(withAuth0(App));
+export default withAuth0(App);

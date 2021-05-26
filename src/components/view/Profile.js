@@ -123,36 +123,13 @@ export class Profile extends Component {
                           </Card.Text>
                         </Card.Body>
                       </Card>
-                      <Button onClick={() => this.props.deleteFav(index)} style={{ border: '2px solid red', color: 'red', backgroundColor: 'white', paddingLeft: '20px', paddingRight: '20px', marginLeft: '30px', fontWeight: 'bolder' }} > امسح ابوس ايدك</Button>
+                      <Button onClick={() => this.props.deleteFav(index)} style={{ border: '2px solid red', color: 'red', backgroundColor: 'white', paddingLeft: '20px', paddingRight: '20px', marginLeft: '30px', fontWeight: 'bolder' }} > X</Button>
 
                     </>
                   </Col>
                 )}
 
-                {/* <div className='divb'>
-                  <Col>
-                    <h3 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder', marginTop: '20px', color:'rgb(20, 63, 83)' }}>My Blogs</h3>
-                    {this.state.newFavSasasasasasasasa.map((data, index) =>
-                      <>
-
-                        <Card className='card1' key={index} >
-                          <Card.Body bsPrefix required='card-body' onClick={this.viewFavorite}>
-                            <Card.Img className='card-img-top1' variant="top" src={data.img} alt="First slide" />
-                            <Card.Title className='card1-title'>{data.label}</Card.Title>
-                            <Card.Text >
-                              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                              aaaaaaaaaaaaaaaaaaaaaaaa
-                              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          
-                            </Card.Text>
-                          </Card.Body>
-                        </Card>
-                      </>
-                    )}
-                  </Col>
-
-                </div> */}
+               
               </Row>
             </Container>
           </>
