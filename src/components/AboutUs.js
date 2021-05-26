@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import HeaderPhoto from './utilites/headerPhoto'
 
 export class AboutUs extends Component {
     render() {
         return (
             <>
+            <HeaderPhoto/>
                 <div className='ourinfo'>
                     <h2 className='header_1_info'> Our Story </h2>
                     <div className='p_1_info'>
