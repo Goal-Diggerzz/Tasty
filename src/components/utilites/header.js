@@ -3,11 +3,13 @@ import '../../assets/header.css';
 import logo from '../../assets/logo_transparent.png';
 import LoginButton from '../login';
 // import { Link} from "react-router";
-
+import { withAuth0 } from '@auth0/auth0-react';
+import { Link } from "react-router-dom";
 
 
 export class Header extends Component {
   render() {
+    const {isAuthenticated}=this.props.auth0
     return (
       <>
         <div id="abc">
@@ -20,24 +22,23 @@ export class Header extends Component {
           </div>
           <nav>
             <ul>
-              <li ><a href={'/'}>Home</a></li>
-              <li link={'/recipes'}><a href="/recipes">My Recipies</a></li>
-              <li><a href="http://localhost:3000/blogs">Blog</a></li>
-              <li><a href="http://localhost:3000/profile">profile</a></li>
-              <li><a href="http://localhost:3000/AboutUs">About Us</a></li>
-              <li >
+              <li ><Link to="/">Home</Link> </li>
+              <li ><Link to="/recipes">Recipes</Link></li>
+              <li><Link to="/blogs">Blogs</Link></li>
+              <li><Link to="/profile">Profile</Link></li>
+              <li><Link to="/Aboutus">About us</Link></li>
+              {!isAuthenticated &&   <li >
                 <LoginButton />
 
-              </li>
+              </li>}
             </ul>
           </nav>
         </div>
-
 
       </>
     );
   }
 }
 
-export default Header;
+export default withAuth0(Header);
 

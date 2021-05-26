@@ -5,6 +5,12 @@ import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import Blog from '../utilites/blog';
 import '../../assets/blog.css';
+import {
+  BrowserRouter as Router,
+Link
+} from "react-router-dom";
+import HeaderPhoto from '../utilites/headerPhoto'
+
 
 export class blogs extends Component {
 
@@ -19,6 +25,7 @@ export class blogs extends Component {
       title: '',
       show: false,
       blogData: [],
+      cardData:[],
 
     };
   }
@@ -48,6 +55,8 @@ export class blogs extends Component {
     console.log(this.state.blogData);
 
   }
+
+ 
 
 
   componentDidMount() {
@@ -105,7 +114,9 @@ export class blogs extends Component {
     const { user } = this.props.auth0
     return (
       <>
-        <h2 className='stat1'> We Are Glad to Post Your Experinces With Us
+      <HeaderPhoto/>
+          <h2 className='stat1'> We Are Glad to Post Your Experinces With Us
+
         <br /> <br />
         Share Your Blog here
         <br /><br />
@@ -114,73 +125,25 @@ export class blogs extends Component {
           Post new Blog
             </Button>
 
-        <h1 style={{ fontFamily: `'Merienda One', cursive`, color: 'rgb(20, 63, 83)', marginTop: '30px', textAlign: 'center', backgroundColor: 'rgba(74, 88, 95, 0.356)', }}> All kind of recipes are provided! <br /> <br />but here we have the recipes of the best Bloggers </h1>
-        <BlogModal
-          handleShow={this.handleShow}
-          handleClose={this.handleClose}
-          show={this.state.show}
-          title={this.state.title}
-          img={this.state.img}
-          name={this.state.name}
-          text={this.state.text}
-          email={this.state.email}
-          updateName={this.updateName}
-          updateText={this.updateText}
-          updatetitle={this.updatetitle}
-          updateImg={this.updateImg}
-          addBlog={this.addBlog}
-          updateEmail={this.updateEmail}
+        {/* <h1 style={{ fontFamily: `'Merienda One', cursive`, color: 'rgb(20, 63, 83)', marginTop: '30px', textAlign: 'center', backgroundColor: 'rgba(74, 88, 95, 0.356)', }}> All kind of recipes are provided! <br /> <br />but here we have the recipes of the best Bloggers </h1> */}
+            <BlogModal
+        handleShow={this.handleShow}
+        handleClose={this.handleClose}
+        show={this.state.show}
+        title={this.state.title}
+        img={this.state.img}
+        name={this.state.name}
+        text={this.state.text}
+        email={this.state.email}
+        updateName={this.updateName}
+        updateText={this.updateText}
+        updatetitle={this.updatetitle}
+        updateImg={this.updateImg}
+        addBlog={this.addBlog}
+        updateEmail={this.updateEmail}
         />
-        <div className="container-fluid d-flex justify-content-center container-fluid1">
-          <div className="row">
-            <div className="col-md-4 md-41">
-              <div className="card text-center card1">
-                <div className="overflow overflow1">
-                  <img src="https://www.seriouseats.com/thmb/TCo4MAh5Jy4y5Q1oc1BVx5z9_ho=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__09__20120914-smashed-burgers-10-260d32eebb994b60b0a0f078e904f65f.jpg" alt="" className="card-img-top imgtop1" />
-                </div>
-                <div className="card-body text-dark card-body1">
-                  <h4 style={{ fontFamily: `'Merienda One', cursive`, color: 'rgb(20, 63, 83)' }} className="card-title">
-                    Classic Smashed Burgers Recipe
-      </h4>
-                  <p className="card-text card-text1 text-secondary">
-                    By J. Kenji López-Alt
-      </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 md-41">
-              <div className="card text-center card1">
-                <div className="overflow overflow1">
-                  <img src="https://www.seriouseats.com/thmb/CnsS6yn6NXiid0lqmFzYizg56ns=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__08__20200817-Panaeng-Neua-derek-lucci-1-26689646c93c4889bdd1de4f6b763af2.jpg" alt="" className="card-img-top imgtop1" />
-                </div>
-                <div className="card-body text-dark card-body1">
-                  <h4 style={{ fontFamily: `'Merienda One', cursive`, color: 'rgb(20, 63, 83)' }} className="card-title">
-                    Panang Neua (Thai Panang Beef Curry) Recipe
-      </h4>
-                  <p className="card-text card-text1 text-secondary">
-                    By J. Kenji López-Alt
-      </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 md-41">
-              <div className="card text-center card1">
-                <div className="overflow overflow1">
-                  <img src="https://www.seriouseats.com/thmb/DnWB-PZBxur68tk5BsaB6vORpyg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2017__12__20171201-bravetart-brownies-vicky-wasik-15-8f17e2742f05443ead4de0b887d339fb.jpg" alt="" className="card-img-top imgtop1" />
-                </div>
-                <div className="card-body text-dark card-body1">
-                  <h4 style={{ fontFamily: `'Merienda One', cursive`, color: 'rgb(20, 63, 83)' }} className="card-title">
-                    Glossy Fudge Brownies Recipe | BraveTartClassic Smashed Burgers Recipe
-      </h4>
-                  <p className="card-text card-text1 text-secondary">
-                    By Stella Parks
-      </p>
-                </div>
-              </div>
-            </div>
+        
 
-          </div>
-        </div>
         <Container className="overflow">
 
           {this.state.blogData !== [] && <div className="container-fluid d-flex justify-content-center container-fluid1">
@@ -195,7 +158,10 @@ export class blogs extends Component {
                   text={blogData.text}
                   idx={idx}
                   removeBlog={this.removeBlog}
-                />
+                  getCardData={this.props.getCardData}
+                  blogData={blogData}
+                  />
+
 
               }))
             } </div></div>}

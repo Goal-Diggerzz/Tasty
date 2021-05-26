@@ -10,6 +10,7 @@ class SelectFavorite extends React.Component {
 
 
 
+
   render() {
     console.log(this.props.show, this.props.label, this.props.url, this.props.ingredients);
     return (

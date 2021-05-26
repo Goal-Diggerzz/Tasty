@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+
 import { Form, Button, Card, DropdownButton, Jumbotron, Container, Row, Col, Carousel } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import SelectFavorite from '../utilites/selectFavorite'
 import '../../assets/profilestyle.css'
+import HeaderPhoto from '../utilites/headerPhoto'
+
+
 import Footer from "../utilites/footer";
 // import Dropdown_myaccount from '../utilites/dropdown_myaccount'
 
@@ -20,6 +24,7 @@ export class Profile extends Component {
       ingredients: [],
       newFavSasasasasasasasa: [],
       show: false,
+
       eventvalue: ''
     };
   }
@@ -55,6 +60,7 @@ export class Profile extends Component {
   viewFavorite = (event) => {
     event.preventDefault();
     this.setState({
+
       show: true,
       label: event.target.parentElement.parentElement.children[0].children[1].innerHTML,
       eventvalue: event.target.parentElement.parentElement.children[0].outerText,
@@ -81,9 +87,12 @@ export class Profile extends Component {
     // console.log(this.state.newFavSasasasasasasasa);
 
     return (
+      <>
+      <HeaderPhoto/>
       <div>
         {isAuthenticated && (
           <>
+
             <Jumbotron style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }}>
               <h1 >Your Delicious Recipies </h1>
               <p style={{ marginTop: '10px', marginLeft: '20px' }}>
@@ -96,6 +105,7 @@ export class Profile extends Component {
 
 
             <Container>
+
               <Row md={3}>
 
                 {this.state.newFavSasasasasasasasa.map((data, index) =>
@@ -141,11 +151,13 @@ export class Profile extends Component {
                       </>
                     )}
                   </Col>
+
                 </div> */}
               </Row>
             </Container>
           </>
         )}
+
         <>
           {
             <SelectFavorite show={this.state.show} close={this.closing} url={this.state.img}
@@ -154,6 +166,7 @@ export class Profile extends Component {
         </>
         <Footer />
       </div>
+      </>
     );
   }
 }

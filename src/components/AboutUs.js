@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import HeaderPhoto from './utilites/headerPhoto'
 
 export class AboutUs extends Component {
     render() {
         return (
             <>
+            <HeaderPhoto/>
                 <div className='ourinfo'>
                     <h2 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }} className='header_1_info'> Team members who participated in the completion of this great project!</h2>
                     <div className='p_1_info'>

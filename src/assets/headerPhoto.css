@@ -1,0 +1,32 @@
+.vc_row[data-vc-full-width] {
+    -webkit-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+    overflow: hidden;
+}
+.vc_custom_1580822322433 {
+    margin-bottom: 0px !important;
+    /* padding-top: 100px !important; */
+    padding-bottom: 95px !important;
+    background-image: url(https://foodhub.modeltheme.com/wp-content/uploads/2020/02/foodhub-slider-main-food-v4.jpg?id=20741) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    position: relative;
+    left: -321.176px;
+    box-sizing: border-box;
+    width: 1812px;
+    padding-left: 321.176px;
+    padding-right: 320.794px;
+}
+
+.vc_row {
+    margin-left: 17%;
+    height: 733px;
+}
+.wpb_row {
+    margin-bottom: 80px;
+}
+.vc_row {
+    background-size: cover;
+}
