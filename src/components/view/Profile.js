@@ -1,16 +1,31 @@
 import React, { Component } from "react";
-import { Form, Button, Container, Row, Col, Carousel } from "react-bootstrap";
+
+import { Form, Button, Card, DropdownButton, Jumbotron, Container, Row, Col, Carousel } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
-import axios from 'axios'
+import axios from 'axios';
+import SelectFavorite from '../utilites/selectFavorite'
+import '../../assets/profilestyle.css'
+import HeaderPhoto from '../utilites/headerPhoto'
+
+
+import Footer from "../utilites/footer";
+// import Dropdown_myaccount from '../utilites/dropdown_myaccount'
+
+// import bootstrap from 'bootstrap';
+
+
 export class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      label: String,
-      img: String,
-      calories: Number,
+      label: '',
+      img: '',
+      calories: 0,
       ingredients: [],
       newFavSasasasasasasasa: [],
+      show: false,
+
+      eventvalue: ''
     };
   }
 
@@ -25,56 +40,133 @@ export class Profile extends Component {
       // }
       const url = `http://localhost:3001/cheff?email=${user.email}`
       const favRec = await axios.get(url);
-      console.log(`please give me Rec`, favRec.data);
+      // console.log(`please give me Rec`, favRec.data);
+      console.log(this.state.calories);
       this.setState({
         newFavSasasasasasasasa: favRec.data,
+        // label: favRec.data.label,
+        // img: favRec.data.img,
+        // calories: favRec.data.calories,
+        // ingredients: favRec.data.ingredients
         // showModal: true
 
       });
-      }
+    }
     catch (error) {
-      console.log(`paaaalllleeeeeeeeez`, this.state.newFavSasasasasasasasa);
+      // console.log(`paaaalllleeeeeeeeez`, this.state.newFavSasasasasasasasa);
       console.log(error);
     }
   }
+  viewFavorite = (event) => {
+    event.preventDefault();
+    this.setState({
+
+      show: true,
+      label: event.target.parentElement.parentElement.children[0].children[1].innerHTML,
+      eventvalue: event.target.parentElement.parentElement.children[0].outerText,
+      img: event.target.parentElement.parentElement.children[0].firstChild.currentSrc
+      // calories: 'favRec.data.calories',
+      // ingredients: 'favRec.data.ingredients'
+
+    })
+    { console.log('this is event', event); }
+    { console.log('this is event', this.state.eventvalue); }
+    { console.log('this is event', this.state.label); }
+  }
+
+  closing = () => {
+    this.setState({
+      show: false,
+    })
+  }
+
+
   render() {
     // let testNames= this.props.favouriteData;
     const { user, isAuthenticated } = this.props.auth0;
-    console.log(this.state.newFavSasasasasasasasa);
+    // console.log(this.state.newFavSasasasasasasasa);
+
     return (
+      <>
+      <HeaderPhoto/>
       <div>
         {isAuthenticated && (
           <>
-            <img src={user.picture} alt='' />
-            <h2>{user.name}</h2>
+
+            <Jumbotron style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }}>
+              <h1 >Your Delicious Recipies </h1>
+              <p style={{ marginTop: '10px', marginLeft: '20px' }}>
+                Added To Favorite Recipes
+            </p>
+              <h3 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder', marginTop: '20px' }} >Favorite Recipes</h3>
+            </Jumbotron>
+            {/* <Dropdown_myaccount /> */}
+
+
 
             <Container>
-              <Row>
-                <Col>
-                  <h3>Favorite Recipes</h3>
-                    {this.state.newFavSasasasasasasasa.map((data) =>
-                        <>
-                        {console.log(data.img)}
-                        <img
-                          className="d-block w-100"
-                          src={data.img}
-                          alt="First slide"
-                        />
-                          <h3>{data.label}</h3>
-                          <p>
+
+              <Row md={3}>
+
+                {this.state.newFavSasasasasasasasa.map((data, index) =>
+                  <Col>
+
+                    <>
+                      <h3 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder', marginTop: '20px' }} >{data.label}</h3>
+                      <Card className='card1' onClick={this.viewFavorite} >
+                        <Card.Body bsPrefix required='card-body' >
+                          <Card.Img className='card-img-top1' variant="top" src={data.img} alt="First slide" />
+                          <Card.Title className='card1-title'>{data.label}</Card.Title>
+                          <Card.Text >
                             {data.ingredients}
-                          </p>
-                          </>
+                            {/* {data.ingredients} */}
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                      <Button onClick={() => this.props.deleteFav(index)} style={{ border: '2px solid red', color: 'red', backgroundColor: 'white', paddingLeft: '20px', paddingRight: '20px', marginLeft: '30px', fontWeight: 'bolder' }} > امسح ابوس ايدك</Button>
+
+                    </>
+                  </Col>
+                )}
+
+                {/* <div className='divb'>
+                  <Col>
+                    <h3 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder', marginTop: '20px', color:'rgb(20, 63, 83)' }}>My Blogs</h3>
+                    {this.state.newFavSasasasasasasasa.map((data, index) =>
+                      <>
+
+                        <Card className='card1' key={index} >
+                          <Card.Body bsPrefix required='card-body' onClick={this.viewFavorite}>
+                            <Card.Img className='card-img-top1' variant="top" src={data.img} alt="First slide" />
+                            <Card.Title className='card1-title'>{data.label}</Card.Title>
+                            <Card.Text >
+                              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                              aaaaaaaaaaaaaaaaaaaaaaaa
+                              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </>
                     )}
-                </Col>
-                <Col>
-                  <h3>My Blogs</h3>
-                </Col>
+                  </Col>
+
+                </div> */}
               </Row>
             </Container>
           </>
         )}
+
+        <>
+          {
+            <SelectFavorite show={this.state.show} close={this.closing} url={this.state.img}
+              ingredients={this.state.eventvalue} label={this.state.label} />
+          }
+        </>
+        <Footer />
       </div>
+      </>
     );
   }
 }

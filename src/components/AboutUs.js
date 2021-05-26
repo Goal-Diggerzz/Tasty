@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
+import HeaderPhoto from './utilites/headerPhoto'
 
 export class AboutUs extends Component {
     render() {
         return (
             <>
+            <HeaderPhoto/>
                 <div className='ourinfo'>
-                    <h2 className='header_1_info'> Our Story </h2>
+                    <h2 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }} className='header_1_info'> Team members who participated in the completion of this great project!</h2>
                     <div className='p_1_info'>
 
-                        <p>
-                            Founded in 1999, Tusty made its mark on millions of people who live around the world. With our service,
-                            you can make your own recipe and find many ingredients
-                            from all cooking arts in the world. that our goal is to make the people and cookers happy everywhere.
+                        <p className='aboutM'>
+                            Founded in 1999, Tusty made its mark on millions of people who live around the world.<br /> With our service,
+                            you can make your own recipe and find many ingredients<br />
+                            from all cooking arts in the world. <br />that our goal is to make the people and cookers happy everywhere.
                           </p>
                     </div>
-                    <img className='header_img' src='https://www.graysonsrestaurants.com/new-website-2020/cms_admin/site/wp-content/uploads/2017/11/graysons-our-story.jpg' alt='' />
 
                     <h2 className='header_2_info'> INSPIRED BY MUM </h2>
                     <p className='p_2_info'>

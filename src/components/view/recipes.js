@@ -6,6 +6,8 @@ import Popover from 'react-bootstrap/Popover';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import HeaderPhoto from '../utilites/headerPhoto'
+
 // import RecipesPopUp from './popUpRecipes'
 
 // import CardDeck from "react-bootstrap/CardDeck";
@@ -71,12 +73,13 @@ export class Recipes extends Component {
 
 
   render() {
-    recipesData = this.props.foodData;
-    console.log('the recipes data', this.props.foodData);
+    // setTimeout(() => {console.log(this.props)}, 2000);
+
     return (
 
 
       <>
+      <HeaderPhoto/>
         {this.state.myLabel ? null
           :
 
@@ -94,12 +97,12 @@ export class Recipes extends Component {
           //  style={{ marginTop: '100px', width: '90%', marginLeft: '10%' }}
           >
 
-            {recipesData.map((data, idx) => {
+            {this.props.foodData.map((data, idx) => {
               return (
 
                 <Col>
 
-                  <Card key={idx} style={{ width: "20rem", height: '27rem', marginBottom: '20px' }}>
+                  <Card key={idx} style={{ width: "20rem", height: '27rem', marginBottom: '20px' }} >
                     <div style={{ overflow: 'hidden' }}>
                       <Card.Img
                         className='zoomPic'
