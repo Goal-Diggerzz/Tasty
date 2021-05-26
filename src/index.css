@@ -128,7 +128,7 @@ margin-top: 100px;
 
 .ourinfo {
   color: aliceblue;
-  background-color: rgb(10, 10, 10);
+  /* background-color: rgb(10, 10, 10); */
   /* opacity: .8; */
   margin-top: 5%;
   margin-bottom: 3%;
@@ -152,7 +152,7 @@ margin-top: 100px;
   margin-left: 10%;
   margin-right: 5%;
   position: relative;
-  left:10%px;
+  left:-54px;
   top:-115%;
 }
 .header_2_info{
@@ -162,19 +162,19 @@ margin-top: 100px;
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  left:10%px;
-  top:-100%;
+  left:-54px;
+    top:-100%;
   
 }
 
 .header_1_info{
-  width: 600px;
+  /* width: 600px; */
   margin-top: 5%;
-  margin-bottom: 3%;
+  /* margin-bottom: 3%; */
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  left:10%px;
+  left:-54px;
   bottom:-15%;
 }
 
@@ -252,6 +252,26 @@ margin-top: 100px;
 
 }
 
+.imgaccount{
+  border-radius: 50%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  margin-left: 20%;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+
+/* .row{
+  height:800px;
+  width: 100%;
+}
+.container-true{
+  height:500px;
+  width: 100%;
+} */
+
+
 
 #formBasicText{
   -webkit-text-size-adjust: 100%;
@@ -283,7 +303,7 @@ margin-top: 100px;
   padding: 0;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  border: 2px solid rgb(20, 63, 83);
+  border: 2px solid rgb(74, 88, 95);
   visibility: visible;
   padding: 30px;
   text-align: center;
@@ -843,3 +863,14 @@ font-family: "Open Sans";
   padding: 5px;
 }
 
+.aboutM{
+  position: absolute;
+  font-family: 'Merienda One', cursive;
+  color: white;
+
+  font-size: 1.5rem;
+  position: absolute;
+  top:131px;
+  left:  83px;
+
+}

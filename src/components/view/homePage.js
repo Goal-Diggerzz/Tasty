@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
@@ -80,6 +81,7 @@ class Home extends React.Component {
                       />
                     </div>
 
+
                     <h3 style={{ fontFamily: "'Signika', sans-serif;" }}>
                       Burgers
                     </h3>
@@ -105,6 +107,7 @@ class Home extends React.Component {
                           src="https://foodhub.modeltheme.com/wp-content/uploads/2020/01/pizza_categ-400x500.jpg"
                         />
                       </div>
+
                     </div>
                     <Card.Link
                       className="link"
@@ -141,6 +144,7 @@ class Home extends React.Component {
                     >
                       <h3 style={{ fontFamily: "'Signika', sans-serif;" }}>
                         Drinks
+
                     </h3>
                     </Card.Link>
                   </Card.Body>
@@ -191,6 +195,7 @@ class Home extends React.Component {
                   </h3>
                   <br></br>
                   <p className="sliderText">
+
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
                   </p>
                 </Carousel.Caption>
@@ -221,6 +226,7 @@ class Home extends React.Component {
                   </h3>
                   <br></br>
                   <p className="sliderText">
+
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
                 </Carousel.Caption>
@@ -251,6 +257,7 @@ class Home extends React.Component {
                   </h3>
                   <br></br>
                   <p className="sliderText">
+
                     Praesent commodo cursus magna, vel scelerisque nisl
                     consectetur.
                   </p>
@@ -316,6 +323,7 @@ class Home extends React.Component {
                   </Card.Body>
                 </Card>
           </CardColumns> */}
+
           </div>
           <Footer />
         </div>

@@ -18,22 +18,23 @@ export class blogs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email:'',
+      email: '',
       name: '',
-     img:'',
-      text:'',
-      title:'',
+      img: '',
+      text: '',
+      title: '',
       show: false,
       blogData: [],
       cardData:[],
 
     };
   }
-  handleShow = () => { this.setState({ show: true })
-console.log(this.state.show);
-}
+  handleShow = () => {
+    this.setState({ show: true })
+    console.log(this.state.show);
+  }
   handleClose = () => this.setState({ show: false })
-  
+
   updateName = (e) => this.setState({ name: e.target.value });
   updateText = (e) => this.setState({ text: e.target.value });
   updatetitle = (e) => this.setState({ title: e.target.value });
@@ -48,7 +49,7 @@ console.log(this.state.show);
     console.log(reqBlogData.data);
     this.setState({
       blogData: reqBlogData.data,
-      email:user.email
+      email: user.email
 
     })
     console.log(this.state.blogData);
@@ -68,11 +69,11 @@ console.log(this.state.show);
   addBlog = async (e) => {
 
     const url = `http://localhost:3001/blog`;
-    const {user}=this.props.auth0
+    const { user } = this.props.auth0
     const sendedblog = {
-      email:this.state.email,
+      email: this.state.email,
       Image: this.state.img,
-      title:this.state.title,
+      title: this.state.title,
       text: this.state.text,
       userName: this.state.name,
 
@@ -82,32 +83,32 @@ console.log(this.state.show);
 
     this.setState({
       blogData: newBlog.data,
-      email:user.email
+      email: user.email
     });
     console.log(this.state.blogData);
 
   }
 
-  removeBlog =  (index)=>{
-    
-const blogsArr=this.state.blogData.filter((blog, idx)=>this.state.email===blog.email?blog:null
+  removeBlog = (index) => {
 
-);
-console.log(blogsArr);
-    const blogsAfterDeletion = blogsArr.map((arr)=>arr.blog.filter((blog,idx)=>{
+    const blogsArr = this.state.blogData.filter((blog, idx) => this.state.email === blog.email ? blog : null
+
+    );
+    console.log(blogsArr);
+    const blogsAfterDeletion = blogsArr.map((arr) => arr.blog.filter((blog, idx) => {
       return idx !== index;
     }));
     console.log(blogsAfterDeletion);
     // console.log(this.state.blogData);
-    const {user} = this.props.auth0
+    const { user } = this.props.auth0
     const query = {
       email: user.email
     }
-     axios.delete(`http://localhost:3001/blog/${index}`, {params: query});
-  
+    axios.delete(`http://localhost:3001/blog/${index}`, { params: query });
+
     window.location.reload();
   };
-  
+
 
   render() {
     const { user } = this.props.auth0
@@ -115,6 +116,7 @@ console.log(blogsArr);
       <>
       <HeaderPhoto/>
           <h2 className='stat1'> We Are Glad to Post Your Experinces With Us
+
         <br /> <br />
         Share Your Blog here
         <br /><br />
@@ -141,28 +143,30 @@ console.log(blogsArr);
         updateEmail={this.updateEmail}
         />
         
+
         <Container className="overflow">
-         
+
           {this.state.blogData !== [] && <div className="container-fluid d-flex justify-content-center container-fluid1">
             <div className="row">{
-              this.state.blogData.map((data) =>data.blog.map((blogData,idx)=>{
-              console.log('idx',idx);
-                   return <Blog
+              this.state.blogData.map((data) => data.blog.map((blogData, idx) => {
+                console.log('idx', idx);
+                return <Blog
                   email={data.email}
                   img={blogData.Image}
                   title={blogData.title}
-                  name={blogData.userName} 
+                  name={blogData.userName}
                   text={blogData.text}
-                  idx={idx} 
+                  idx={idx}
                   removeBlog={this.removeBlog}
                   getCardData={this.props.getCardData}
                   blogData={blogData}
                   />
 
+
               }))
             } </div></div>}
         </Container>
-       
+
       </>
     )
   }

@@ -38,8 +38,10 @@ export class App extends Component {
       query: '',
       sendedCatogire: '',
       blogdata: [],
+
+      newArrOfMariam: '',
+
       selectedFavData: '',
-      // newFavSasasasasasasasa: [],
 
     };
   }
@@ -125,6 +127,21 @@ this.setState({
         },()=>this.getRecipesDataFromCat())
           }
 
+  deleteFav = async (index) => {
+    const { user } = this.props.auth0;
+    const newArrOfFav = this.state.favouriteData.filter((fav, idx) => {
+      return idx !== index;
+    });
+    this.setState({
+      newArrOfMariam: newArrOfFav,
+    })
+    console.log('laaaaaabel', this.state.newArrOfMariam);
+    console.log('innnndex', index);
+    const query = { email: user.email }
+    await axios.delete(`http://localhost:3001/cheff/${index}`, { params: query })
+    // window.location.reload();
+  }
+
 
   showModalFunc = () => {
     this.setState({
@@ -154,6 +171,7 @@ this.setState({
     this.setState({
       favouriteData: favData.data.myRecipes,
     });
+
   };
 
 
@@ -173,6 +191,7 @@ this.setState({
   };
   render() {
     const { isAuthenticated } = this.props.auth0;
+
     console.log(isAuthenticated);
     return (
 
@@ -206,6 +225,15 @@ this.setState({
             </Route>
 
 
+                <Recipes foodData={this.state.recipiesData}
+                  addFav={this.addFav}
+                // getMyRecipes={this.getMyRecipes}
+                />
+                <Search
+                  getRecipesData={this.getRecipesData}
+                  updateQuery={this.updateQuery}
+                />
+
             <Route exact path="/blogs">
               {isAuthenticated && <Blogs getCardData={this.getCardData} />}
 
@@ -214,18 +242,26 @@ this.setState({
             <Route exact path="/blog">
               {isAuthenticated && <BlogDetail blogdata={this.state.blogdata} />}
 
-            </Route>
-
-            <Route exact path="/profile">
-              {(isAuthenticated) &&
-                <Profile favouriteData={this.state.favouriteData}
-                // newFavSasasasasasasasa={this.state.newFavSasasasasasasasa}
-                // getMyRecipes={this.getMyRecipes}
-                />}
 
             </Route>
+
+
+
             <Route exact path="/aboutus">
               <Test />
+              </Route>
+
+              <Route exact path="/profile">
+                {(isAuthenticated) &&
+                  <Profile
+                    deleteFav={this.deleteFav}
+                    favouriteData={this.state.favouriteData}
+                  // newFavSasasasasasasasa={this.state.newFavSasasasasasasasa}
+                  // getMyRecipes={this.getMyRecipes}
+                  />}
+
+            
+
 
             </Route>
             
