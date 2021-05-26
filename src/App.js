@@ -1,51 +1,37 @@
-
-
 import React, { Component } from 'react';
 import Home from './components/view/homePage';
 import Header from './components/utilites/header';
 import Recipes from './components/view/recipes';
 import Search from './components/Search';
-import ModalApp from './components/modalApp';
-// import Footer from './components/utilites/footer';
 import Blogs from './components/view/blogs';
 import AboutUs from './components/AboutUs';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/view/Profile'
-import Test from './components/view/AboutTest'
-
-import RecipesPopUp from './components/view/popUpRecipes'
-import IsLoadingAndError from './components/utilites/loading'
+import Test from './components/view/AboutTest';
+// import Burger from './components/view/burger'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   BrowserRouter
 } from "react-router-dom";
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 
 export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
-      showCards: true,
       recipiesData: [],
       favouriteData: [],
       imgPath: '',
       title: '',
       description: '',
       query: '',
-
       selectedFavData: '',
-      // newFavSasasasasasasasa: [],
-
+      newArrOfMariam:'',
     };
   }
-
-
-
 
 
 
@@ -63,7 +49,7 @@ export class App extends Component {
   getRecipesData = async () => {
 
     console.log(this.state.query);
-    const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=${this.state.query}`
+    const url = `http://localhost:3001/nute?app_key=483d48687c5cf962706b9e8f1fe9b82e&app_id=a9a6d2ec&q=burger`
 
     const expressReq = await axios.get(url);
     // console.log('the Express data', expressReq.data);
@@ -73,15 +59,14 @@ export class App extends Component {
       showModal: true,
 
     });
-    console.log('the recipes', this.state.recipiesData);
+    // console.log('the recipes', this.state.recipiesData);
 
   }
 
 
-  clickRecipeFun = (e) => {
+  // clickRecipeFun = (e) => {
 
-  }
-
+  // }
 
   showModalFunc = () => {
     this.setState({
@@ -95,7 +80,7 @@ export class App extends Component {
   };
 
   addFavPost = async () => {
-    console.log('the fav data from maraim', this.state.selectedFavData)
+    // console.log('the fav data from maraim', this.state.selectedFavData)
     const { user } = this.props.auth0;
     const favDataBody = {
       email: user.email,
@@ -106,8 +91,8 @@ export class App extends Component {
     };
     const url = `http://localhost:3001/cheff`;
     const favData = await axios.post(url, favDataBody);
-    console.log(`Posting data`, this.state.favouriteData)
-    console.log(favDataBody)
+    // console.log(`Posting data`, this.state.favouriteData)
+    // console.log(favDataBody)
     this.setState({
       favouriteData: favData.data.myRecipes,
     });
@@ -115,12 +100,8 @@ export class App extends Component {
 
 
 
-
-
-
-
   addFav = async (data) => {
-    console.log(data)
+    // console.log(data)
     await this.setState({
       selectedFavData: data,
     });
@@ -128,6 +109,22 @@ export class App extends Component {
     this.addFavPost();
     
   };
+
+  deleteFav = async (index) => {
+    const { user } = this.props.auth0;
+    const newArrOfFav = this.state.favouriteData.filter((fav, idx) => {
+      return idx !== index;
+    });
+    this.setState({
+      newArrOfMariam: newArrOfFav,
+    })
+    console.log('laaaaaabel', this.state.newArrOfMariam);
+    console.log('innnndex', index);
+    const query = { email: user.email }
+    await axios.delete(`http://localhost:3001/cheff/${index}`,{ params: query })
+    window.location.reload();
+  }
+
   render() {
     const { isAuthenticated } = this.props.auth0;
    
@@ -163,16 +160,16 @@ export class App extends Component {
 
               </Route>
 
-                         <Route exact path="/blogs">
+                         {/* <Route exact path="/blogs">
               { isAuthenticated&& <Blogs />}
 
-              </Route>
+              </Route> */}
 
               <Route exact path="/profile">
                 {(isAuthenticated)&&
-                <Profile favouriteData={this.state.favouriteData}
-                  // newFavSasasasasasasasa={this.state.newFavSasasasasasasasa}
-                  // getMyRecipes={this.getMyRecipes}
+                <Profile 
+                deleteFav={this.deleteFav}
+                favouriteData={this.state.favouriteData}
                    />}
 
               </Route>
@@ -184,6 +181,11 @@ export class App extends Component {
                 <Test />
 
               </Route>
+              {/* <Route exact path="/burger">
+                <Burger />
+
+              </Route>
+               */}
 
 
 
