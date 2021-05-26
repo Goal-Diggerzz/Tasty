@@ -6,6 +6,7 @@
   height: 40vmin;
   pointer-events: none;
 }
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
