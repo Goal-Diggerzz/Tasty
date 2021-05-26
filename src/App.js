@@ -37,9 +37,9 @@ export class App extends Component {
       title: '',
       description: '',
       query: '',
+      newArrOfMariam: '',
 
       selectedFavData: '',
-      // newFavSasasasasasasasa: [],
 
     };
   }
@@ -88,10 +88,13 @@ export class App extends Component {
       return idx !== index;
     });
     this.setState({
-      favouriteData: newArrOfFav,
+      newArrOfMariam: newArrOfFav,
     })
+    console.log('laaaaaabel', this.state.newArrOfMariam);
+    console.log('innnndex', index);
     const query = { email: user.email }
-    await axios.delete(`${process.env.REACT_APP_SERVER}/cheff/${index}`, { params: query })
+    await axios.delete(`http://localhost:3001/cheff/${index}`, { params: query })
+    // window.location.reload();
   }
 
 
@@ -123,6 +126,7 @@ export class App extends Component {
     this.setState({
       favouriteData: favData.data.myRecipes,
     });
+
   };
 
 
@@ -182,7 +186,9 @@ export class App extends Component {
 
               <Route exact path="/profile">
                 {(isAuthenticated) &&
-                  <Profile favouriteData={this.state.favouriteData}
+                  <Profile
+                    deleteFav={this.deleteFav}
+                    favouriteData={this.state.favouriteData}
                   // newFavSasasasasasasasa={this.state.newFavSasasasasasasasa}
                   // getMyRecipes={this.getMyRecipes}
                   />}

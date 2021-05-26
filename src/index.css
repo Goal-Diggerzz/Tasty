@@ -128,7 +128,7 @@ margin-top: 100px;
 
 .ourinfo {
   color: aliceblue;
-  background-color: rgb(10, 10, 10);
+  /* background-color: rgb(10, 10, 10); */
   /* opacity: .8; */
   margin-top: 5%;
   margin-bottom: 3%;
@@ -163,7 +163,7 @@ margin-top: 100px;
   margin-left: 10%;
   margin-right: 5%;
   position: relative;
-  left:10%px;
+  left:-54px;
   top:-115%;
 }
 .header_2_info{
@@ -173,19 +173,19 @@ margin-top: 100px;
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  left:10%px;
-  top:-100%;
+  left:-54px;
+    top:-100%;
   
 }
 
 .header_1_info{
-  width: 600px;
+  /* width: 600px; */
   margin-top: 5%;
-  margin-bottom: 3%;
+  /* margin-bottom: 3%; */
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  left:10%px;
+  left:-54px;
   bottom:-15%;
 }
 
@@ -615,3 +615,14 @@ font-family: "Open Sans";
    font-size: x-large;
 }
 
+.aboutM{
+  position: absolute;
+  font-family: 'Merienda One', cursive;
+  color: white;
+
+  font-size: 1.5rem;
+  position: absolute;
+  top:131px;
+  left:  83px;
+
+}
