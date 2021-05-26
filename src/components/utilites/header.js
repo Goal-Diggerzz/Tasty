@@ -5,6 +5,7 @@ import LoginButton from '../login';
 // import { Link} from "react-router";
 
 
+
 export class Header extends Component {
   render() {
     return (
@@ -25,7 +26,7 @@ export class Header extends Component {
               <li><a href="http://localhost:3000/profile">profile</a></li>
               <li><a href="http://localhost:3000/AboutUs">About Us</a></li>
               <li >
-                  <LoginButton />
+                <LoginButton />
 
               </li>
             </ul>

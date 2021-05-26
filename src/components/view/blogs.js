@@ -1,175 +1,198 @@
+import BlogModal from '../utilites/blogModal'
 import React, { Component } from 'react'
-import { Form, Row, Col, Button, Card,Container,ListGroup,ListGroupItem } from 'react-bootstrap';
+import { Form, Row, Col, Button, Card, Container, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import Blog from '../utilites/blog';
-import  '../../assets/blog.css';
+import '../../assets/blog.css';
+
 export class blogs extends Component {
 
 
   constructor(props) {
     super(props);
     this.state = {
+      email:'',
       name: '',
-      email: '',
-      comment: '',
-      blog: '',
-      showBlog: false,
-      showComment: false,
-      show:false,
-      blogData:[],
+     img:'',
+      text:'',
+      title:'',
+      show: false,
+      blogData: [],
 
     };
   }
-   handleShow = () => this.setState({show:true})
-  updateName = (e) => this.setState({ name: e.target.value });
-  updateEmail = (e) => this.setState({ email: e.target.value });
-  updateblog = (e) => this.setState({ blog: e.target.value });
-  // updateComment = (e) => this.setState({ comment: e.target.value });
-  getBlogs=async ()=>{
-    const {user}=this.props.auth0
-    const blogUrl = `http://localhost:3001/blog?q=frfr`
-    const reqBlogData=await axios.get(blogUrl);
-this.setState({
-blogData:reqBlogData.data,
-
-}) 
-console.log(this.state.blogData);
-
+  handleShow = () => { this.setState({ show: true })
+console.log(this.state.show);
 }
-
-
-componentDidMount(){
-  const {isAuthenticated}=this.props.auth0;
-  console.log(isAuthenticated);
-
- ( isAuthenticated && this.getBlogs())
-}
-
-addBlog = async (e) => {
-  e.preventDefault();
-
-  const url = `http://localhost:3001/blog`;
+  handleClose = () => this.setState({ show: false })
   
-  const sendedblog={
-    Image:this.state.img,
-    text: this.state.name,
-    userName:this.state.comment,
+  updateName = (e) => this.setState({ name: e.target.value });
+  updateText = (e) => this.setState({ text: e.target.value });
+  updatetitle = (e) => this.setState({ title: e.target.value });
+  updateImg = (e) => this.setState({ img: e.target.value });
+  updateEmail = (e) => this.setState({ email: e.target.value });
+
+
+  getBlogs = async () => {
+    const { user } = this.props.auth0
+    const blogUrl = `http://localhost:3001/blog`
+    const reqBlogData = await axios.get(blogUrl);
+    console.log(reqBlogData.data);
+    this.setState({
+      blogData: reqBlogData.data,
+      email:user.email
+
+    })
+    console.log(this.state.blogData);
 
   }
-  const newBlog = await axios.post(url,sendedblog);
- 
 
-  this.setState({
-   blogData:newBlog.data
-  });
 
-} 
-  addComment = () => {
-    console.log(this.state.comment);
+  componentDidMount() {
+    const { isAuthenticated } = this.props.auth0;
+    console.log(isAuthenticated);
+
+    (isAuthenticated && this.getBlogs())
+  }
+
+  addBlog = async (e) => {
+
+    const url = `http://localhost:3001/blog`;
+    const {user}=this.props.auth0
+    const sendedblog = {
+      email:this.state.email,
+      Image: this.state.img,
+      title:this.state.title,
+      text: this.state.text,
+      userName: this.state.name,
+
+    }
+    const newBlog = await axios.post(url, sendedblog);
+
+
     this.setState({
-      showComment: true
-    })
+      blogData: newBlog.data,
+      email:user.email
+    });
+    console.log(this.state.blogData);
+
+  }
+
+  removeBlog =  (index)=>{
     
+const blogsArr=this.state.blogData.filter((blog, idx)=>this.state.email===blog.email?blog:null
+
+);
+console.log(blogsArr);
+    const blogsAfterDeletion = blogsArr.map((arr)=>arr.blog.filter((blog,idx)=>{
+      return idx !== index;
+    }));
+    console.log(blogsAfterDeletion);
+    // console.log(this.state.blogData);
+    const {user} = this.props.auth0
+    const query = {
+      email: user.email
+    }
+     axios.delete(`http://localhost:3001/blog/${index}`, {params: query});
+  
+    window.location.reload();
   };
+  
 
   render() {
-const {user}=this.props.auth0
+    const { user } = this.props.auth0
     return (
       <>
-      <Button variant="primary" onClick={this.handleShow}>
-              Launch demo modal
+        <Button variant="primary" onClick={this.handleShow}>
+          Post new Blog
             </Button>
-        <div className='blogs'>
-          <Form >
-            <Form.Label>Write Your Blog</Form.Label>
-            <Row>
-              <Col>
-                <Form.Control value={this.state.name} onChange={this.updateName} placeholder="Name" />
-              </Col>
-              <Col>
-                <Form.Control value={this.state.email} onChange={this.updateEmail} placeholder="E-mail" />
-              </Col>
-            </Row>
-            <Row>
-              {/* <Form.Control TOO ADD IMAGE /> */}
-            </Row>
-            <Row>
-              <Form.Control value={this.state.blog} onChange={this.updateblog} style={{ height: '200px', width: '90%', marginLeft: '78px', marginTop: '20px', marginBottom: '20px' }} placeholder="Comment..." />
-            </Row>
-            <Button onClick={(e)=>this.addBlog(e)}>Post</Button>
-            {(this.state.showBlog) &&
-              <Row>
-                <p>
-                  {this.state.blog}
-                </p>
-
-
-
-                <Form.Control value={this.state.comment} onChange={this.updateComment} placeholder="Comment" />
-                <Button onClick={this.addComment}>Reply</Button>
-              </Row>}
-            {(this.state.showComment) &&
-              <Row>
-                <p>
-                  {this.state.comment}
-                </p>
-              </Row>}
-          </Form>
- 
+            <BlogModal
+        handleShow={this.handleShow}
+        handleClose={this.handleClose}
+        show={this.state.show}
+        title={this.state.title}
+        img={this.state.img}
+        name={this.state.name}
+        text={this.state.text}
+        email={this.state.email}
+        updateName={this.updateName}
+        updateText={this.updateText}
+        updatetitle={this.updatetitle}
+        updateImg={this.updateImg}
+        addBlog={this.addBlog}
+        updateEmail={this.updateEmail}
+        />
+        <div className="container-fluid d-flex justify-content-center container-fluid1">
+          <div className="row">
+          <div className="col-md-4 md-41">
+            <div className="card text-center card1">
+              <div className="overflow overflow1">
+                <img src="https://www.seriouseats.com/thmb/TCo4MAh5Jy4y5Q1oc1BVx5z9_ho=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__09__20120914-smashed-burgers-10-260d32eebb994b60b0a0f078e904f65f.jpg" alt="" className="card-img-top imgtop1" />
+              </div>
+              <div className="card-body text-dark card-body1">
+                <h4 className="card-title">
+                  Classic Smashed Burgers Recipe
+      </h4>
+                <p className="card-text card-text1 text-secondary">
+                  By J. Kenji López-Alt
+      </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 md-41">
+            <div className="card text-center card1">
+              <div className="overflow overflow1">
+                <img src="https://www.seriouseats.com/thmb/CnsS6yn6NXiid0lqmFzYizg56ns=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__08__20200817-Panaeng-Neua-derek-lucci-1-26689646c93c4889bdd1de4f6b763af2.jpg" alt="" className="card-img-top imgtop1" />
+              </div>
+              <div className="card-body text-dark card-body1">
+                <h4 className="card-title">
+                Panang Neua (Thai Panang Beef Curry) Recipe
+      </h4>
+                <p className="card-text card-text1 text-secondary">
+                  By J. Kenji López-Alt
+      </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 md-41">
+            <div className="card text-center card1">
+              <div className="overflow overflow1">
+                <img src="https://www.seriouseats.com/thmb/DnWB-PZBxur68tk5BsaB6vORpyg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2017__12__20171201-bravetart-brownies-vicky-wasik-15-8f17e2742f05443ead4de0b887d339fb.jpg" alt="" className="card-img-top imgtop1" />
+              </div>
+              <div className="card-body text-dark card-body1">
+                <h4 className="card-title">
+                Glossy Fudge Brownies Recipe | BraveTartClassic Smashed Burgers Recipe
+      </h4>
+                <p className="card-text card-text1 text-secondary">
+                By Stella Parks
+      </p>
+              </div>
+            </div>
+          </div>
+           
+          </div>
         </div>
-        <Container>
-  
-  <Row >
-    <Col xs={12} md={4}>
-    <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="https://www.seriouseats.com/thmb/TCo4MAh5Jy4y5Q1oc1BVx5z9_ho=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__09__20120914-smashed-burgers-10-260d32eebb994b60b0a0f078e904f65f.jpg" />
-  <Card.Body>
-    <Card.Title>Classic Smashed Burgers Recipe</Card.Title>
-    <Card.Text>
-      By J. Kenji López-Alt
-    </Card.Text>
-    <Button variant="primary">Show more</Button>
-  </Card.Body>
-</Card>
-    </Col >
-    <Col xs={12} md={4}>  
-    <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="https://www.seriouseats.com/thmb/CnsS6yn6NXiid0lqmFzYizg56ns=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__08__20200817-Panaeng-Neua-derek-lucci-1-26689646c93c4889bdd1de4f6b763af2.jpg" />
-  <Card.Body>
-    <Card.Title>Panang Neua (Thai Panang Beef Curry) Recipe</Card.Title>
-    <Card.Text>
-    By Derek Lucci
-    </Card.Text>
-    <Button variant="primary">Show more</Button>
-  </Card.Body>
-</Card>
-</Col>
-    <Col xs={12} md={4}>
-    <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="https://www.seriouseats.com/thmb/DnWB-PZBxur68tk5BsaB6vORpyg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2017__12__20171201-bravetart-brownies-vicky-wasik-15-8f17e2742f05443ead4de0b887d339fb.jpg" />
-  <Card.Body>
-    <Card.Title>Glossy Fudge Brownies Recipe | BraveTart</Card.Title>
-    <Card.Text>
-    By Stella Parks
-    </Card.Text>
-    <Button variant="primary">Show more</Button>
-  </Card.Body>
-</Card>
-    </Col>
-  </Row>
-  { this.state.blogData !==[] && <Row>
-    {
-                this.state.blogData.map(data=>
-                    <Blog 
-                    email={user.email}
-                    img={this.state.blogData.title}
-                    title={this.state.blogData.title}
-                    description={this.state.blogData.description} />
-                       
-                    )
-                 } </Row>}
-</Container>
+        <Container className="overflow">
+         
+          {this.state.blogData !== [] && <div className="container-fluid d-flex justify-content-center container-fluid1">
+            <div className="row">{
+              this.state.blogData.map((data) =>data.blog.map((blogData,idx)=>{
+              console.log('idx',idx);
+                   return <Blog
+                  email={data.email}
+                  img={blogData.Image}
+                  title={blogData.title}
+                  name={blogData.userName} 
+                  text={blogData.text}
+                  idx={idx} 
+                  removeBlog={this.removeBlog}
+                  />
+
+              }))
+            } </div></div>}
+        </Container>
+       
       </>
     )
   }
