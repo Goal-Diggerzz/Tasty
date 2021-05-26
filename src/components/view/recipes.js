@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import HeaderPhoto from '../utilites/headerPhoto'
+import Footer from "../utilites/footer";
 
 // import RecipesPopUp from './popUpRecipes'
 
@@ -196,7 +197,7 @@ export class Recipes extends Component {
           </Modal>
 
         }
-
+<Footer/>
       </>
     );
 

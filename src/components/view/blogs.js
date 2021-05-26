@@ -10,6 +10,7 @@ import {
 Link
 } from "react-router-dom";
 import HeaderPhoto from '../utilites/headerPhoto'
+import Footer from "../utilites/footer";
 
 
 export class blogs extends Component {
@@ -166,6 +167,7 @@ export class blogs extends Component {
               }))
             } </div></div>}
         </Container>
+        <Footer/>
 
       </>
     )

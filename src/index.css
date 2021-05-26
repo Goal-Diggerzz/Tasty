@@ -128,11 +128,7 @@ margin-top: 100px;
 
 .ourinfo {
   color: aliceblue;
-  /* background-color: rgb(10, 10, 10); */
-  /* opacity: .8; */
-  margin-top: 5%;
-  margin-bottom: 3%;
-  height: 500px;
+ text-align: center;
 }
 
 
@@ -174,7 +170,7 @@ margin-top: 100px;
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  left:-54px;
+  left:2px;
   bottom:-15%;
 }
 
@@ -870,7 +866,7 @@ font-family: "Open Sans";
 
   font-size: 1.5rem;
   position: absolute;
-  top:131px;
-  left:  83px;
+  top:303px;
+  left:  20px;
 
 }
