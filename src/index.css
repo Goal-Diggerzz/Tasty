@@ -294,7 +294,7 @@ margin-top: 100px;
   padding: 0;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  border: 2px solid rgb(20, 63, 83);
+  border: 2px solid rgb(74, 88, 95);
   visibility: visible;
   padding: 30px;
   text-align: center;
@@ -595,3 +595,31 @@ font-family: "Open Sans";
    font-size: x-large;
 }
 
+.stat1{
+  font-family: 'Merienda One', cursive;
+  color: white;
+
+  font-size: 1.8rem;
+  position: absolute;
+  top:300px;
+  left:  130px;
+margin-bottom: 20px;
+}
+
+.s2{
+  margin-top: 20px;
+  position: absolute;
+  top:401px;
+background-color: white;
+  left:286px;
+  color:black;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+  padding: 18px;
+  margin-left: -2px;
+
+
+  
+}

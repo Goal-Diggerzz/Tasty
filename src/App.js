@@ -82,6 +82,18 @@ export class App extends Component {
 
   }
 
+  deleteFav = async (index) => {
+    const { user } = this.props.auth0;
+    const newArrOfFav = this.state.favouriteData.filter((fav, idx) => {
+      return idx !== index;
+    });
+    this.setState({
+      favouriteData: newArrOfFav,
+    })
+    const query = { email: user.email }
+    await axios.delete(`${process.env.REACT_APP_SERVER}/cheff/${index}`, { params: query })
+  }
+
 
   showModalFunc = () => {
     this.setState({
@@ -126,11 +138,11 @@ export class App extends Component {
     });
 
     this.addFavPost();
-    
+
   };
   render() {
     const { isAuthenticated } = this.props.auth0;
-   
+
     console.log(isAuthenticated);
     return (
 
@@ -152,8 +164,8 @@ export class App extends Component {
               <Route exact path="/recipes">
 
                 <Recipes foodData={this.state.recipiesData}
-                  addFav={this.addFav} 
-                  // getMyRecipes={this.getMyRecipes}
+                  addFav={this.addFav}
+                // getMyRecipes={this.getMyRecipes}
                 />
                 <Search
                   getRecipesData={this.getRecipesData}
@@ -163,24 +175,24 @@ export class App extends Component {
 
               </Route>
 
-                         <Route exact path="/blogs">
-              { isAuthenticated&& <Blogs />}
+              <Route exact path="/blogs">
+                {isAuthenticated && <Blogs />}
 
               </Route>
 
               <Route exact path="/profile">
-                {(isAuthenticated)&&
-                <Profile favouriteData={this.state.favouriteData}
+                {(isAuthenticated) &&
+                  <Profile favouriteData={this.state.favouriteData}
                   // newFavSasasasasasasasa={this.state.newFavSasasasasasasasa}
                   // getMyRecipes={this.getMyRecipes}
-                   />}
+                  />}
 
               </Route>
               <Route exact path="/aboutus">
                 <AboutUs />
 
               </Route>
-               <Route exact path="/test">
+              <Route exact path="/test">
                 <Test />
 
               </Route>
