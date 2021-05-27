@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import HeaderPhoto from '../utilites/headerPhoto'
 import Footer from "../utilites/footer";
+import recipesHeader from '../../assets/mgg-vitchakorn-98Xi5vMGKck-unsplash.jpg'
 
 // import RecipesPopUp from './popUpRecipes'
 
@@ -80,7 +81,24 @@ export class Recipes extends Component {
 
 
       <>
-      <HeaderPhoto/>
+              <div className="article-header">
+  <div className="article-details relative text-center">
+    <img className="main-featured-image" src={recipesHeader} alt="Cafe Restaurant Relax" style={{filter:'brightness(0.2)'}} />             <div id="overlay" />
+    <div className="header-title-blog text-center">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12 col-sm-12 col-xs-12 text-center">
+            <div className="header-title-blog-box">
+              
+              
+            </div>                   
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="clearfix" />
+  </div>
+</div>
         {this.state.myLabel ? null
           :
 

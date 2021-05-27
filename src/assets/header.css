@@ -45,11 +45,13 @@
   nav ul li a{
     display: block;
     font-weight: bold;
-    line-height: 34px;
+
     padding: 19px 20px;
     -webkit-transition: all 250ms ease-in-out;
     transition: all 250ms ease-in-out 0s;
     color: #fff;
+    font-weight: 900;
+    font-size: 1rem;
     
   }
   li a:hover {

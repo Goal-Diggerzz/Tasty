@@ -113,13 +113,13 @@ export class Profile extends Component {
 
                     <>
                       
-                      <Card className='card1' onClick={this.viewFavorite} >
+                      <Card  onClick={this.viewFavorite} >
                         <Card.Header>
                         <Card.Title className='card1-title' style={{textAlign:'center',fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder'}}>{data.label}</Card.Title>
 
                         </Card.Header>
                         <Card.Body bsPrefix required='card-body' >
-                          <Card.Img className='card-img-top1' variant="top" src={data.img} alt="First slide" />
+                          <Card.Img  variant="top" src={data.img} alt="First slide" />
                           <Card.Text >
                         
                             {/* {data.ingredients} */}

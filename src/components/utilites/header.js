@@ -15,9 +15,11 @@ export class Header extends Component {
         <div id="abc">
           <div id='logo'>
             <h1>
-              <a>
+              <Link to='/'>
+              
                 <img src={logo} alt="Foodhub" />
-              </a>
+             
+                </Link>
             </h1>
           </div>
           <nav>

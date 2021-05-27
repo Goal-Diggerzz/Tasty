@@ -35,9 +35,9 @@ export class BlogDetail extends Component {
 <Row>
 <Col>
 <h1 style={{textAlign:'center',fontFamily:'Signika'}}>
-  How to make
+  DESCRIPTION: <br/>
 </h1>
-<p style={{textAlign:'center',fontFamily:'Signika'}}>
+<p style={{textAlign:'center',fontFamily:'Signika',fontSize:'1.03rem'}}>
   {text}
 </p>
 </Col>

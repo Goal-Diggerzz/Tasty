@@ -17,7 +17,7 @@ export class Test extends Component {
             <>
                        <div className="article-header">
   <div className="article-details relative text-center">
-    <img className="main-featured-image" src='https://www.push10.com/wp-content/uploads/geneva-gloval-website-hero-design.jpg' alt="Cafe Restaurant Relax" />             <div id="overlay" />
+    <img className="main-featured-image" src='https://i.stack.imgur.com/X9ptX.jpg' alt="Cafe Restaurant Relax" />             <div id="overlay" />
     <div className="header-title-blog text-center">
       <div className="container">
         <div className="row">
@@ -25,7 +25,9 @@ export class Test extends Component {
             <div className="header-title-blog-box">
               <h1 className="post-title">
                                              </h1>
-              <span><i  aria-hidden="true" /> May 27, 2021</span>
+              <span><i  aria-hidden="true" /> Founded in 1999, Tusty made its mark on millions of people who live around the world.<br /> With our service,
+                            you can make your own recipe and find many ingredients<br />
+                            from all cooking arts in the world. <br />that our goal is to make the people and cookers happy everywhere.</span>
               
             </div>                   
           </div>
@@ -40,11 +42,11 @@ export class Test extends Component {
                     <h2 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }} className='header_1_info'> Team members who participated in the completion of this great project!</h2>
                         <div className='p_1_info'>
 
-                        <p className='aboutM'>
+                        {/* <p className='aboutM'>
                         Founded in 1999, Tusty made its mark on millions of people who live around the world.<br /> With our service,
                             you can make your own recipe and find many ingredients<br />
                             from all cooking arts in the world. <br />that our goal is to make the people and cookers happy everywhere.
-                          </p>
+                          </p> */}
                         </div>
 
                      
