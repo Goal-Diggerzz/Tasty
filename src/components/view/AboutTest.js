@@ -15,7 +15,26 @@ export class Test extends Component {
         const { user, isAuthinticated } = this.props.auth0
         return (
             <>
-            <HeaderPhoto/>
+                       <div className="article-header">
+  <div className="article-details relative text-center">
+    <img className="main-featured-image" src='https://www.push10.com/wp-content/uploads/geneva-gloval-website-hero-design.jpg' alt="Cafe Restaurant Relax" />             <div id="overlay" />
+    <div className="header-title-blog text-center">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12 col-sm-12 col-xs-12 text-center">
+            <div className="header-title-blog-box">
+              <h1 className="post-title">
+                                             </h1>
+              <span><i  aria-hidden="true" /> May 27, 2021</span>
+              
+            </div>                   
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="clearfix" />
+  </div>
+</div>
                 <div>
                     <div className='ourinfo'>
                     <h2 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder' }} className='header_1_info'> Team members who participated in the completion of this great project!</h2>

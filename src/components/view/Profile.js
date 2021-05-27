@@ -112,18 +112,24 @@ export class Profile extends Component {
                   <Col>
 
                     <>
-                      <h3 style={{ fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder', marginTop: '20px' }} >{data.label}</h3>
+                      
                       <Card className='card1' onClick={this.viewFavorite} >
+                        <Card.Header>
+                        <Card.Title className='card1-title' style={{textAlign:'center',fontFamily: `'Josefin Sans', sans-serif`, color: 'rgb(20, 63, 83)', fontWeight: 'bolder'}}>{data.label}</Card.Title>
+
+                        </Card.Header>
                         <Card.Body bsPrefix required='card-body' >
                           <Card.Img className='card-img-top1' variant="top" src={data.img} alt="First slide" />
-                          <Card.Title className='card1-title'>{data.label}</Card.Title>
                           <Card.Text >
-                            {data.ingredients}
+                        
                             {/* {data.ingredients} */}
                           </Card.Text>
                         </Card.Body>
+                        <Card.Footer>
+                        <Button variant='danger' onClick={() => this.props.deleteFav(index)} style={{marginLeft:'140px'}} > X</Button>
+                        </Card.Footer>
                       </Card>
-                      <Button onClick={() => this.props.deleteFav(index)} style={{ border: '2px solid red', color: 'red', backgroundColor: 'white', paddingLeft: '20px', paddingRight: '20px', marginLeft: '30px', fontWeight: 'bolder' }} > X</Button>
+                    
 
                     </>
                   </Col>
